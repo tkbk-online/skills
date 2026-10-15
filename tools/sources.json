@@ -1,0 +1,484 @@
+{
+  "$comment": "Imported skills: where each one comes from, its license and a Russian one-liner. tools/import.mjs copies them from local clones (--from <dir of clones>), tools/build-catalog.mjs renders README, catalog.json and index.html from this file plus the SKILL.md front matter. A `bridge` entry is not copied (the license does not allow it or the source is not a skill folder): the catalog links to the original.",
+  "sources": {
+    "anthropics/skills": {
+      "clone": "anthropics-skills",
+      "title": "Anthropic — official Claude skills",
+      "license": "Apache-2.0 (per-skill LICENSE.txt; document skills are proprietary)"
+    },
+    "openai/skills": {
+      "clone": "openai-skills",
+      "title": "OpenAI — Skills Catalog for Codex",
+      "license": "Apache-2.0 (per-skill LICENSE.txt)"
+    },
+    "deepseek-ai/deepseek-harness": {
+      "clone": "deepseek-ai-deepseek-harness",
+      "title": "DeepSeek — DeepSeek Harness skills",
+      "license": "MIT"
+    },
+    "zai-org/GLM-skills": {
+      "clone": "zai-org-GLM-skills",
+      "title": "Z.ai — official GLM skills",
+      "license": "Apache-2.0"
+    },
+    "vercel-labs/agent-skills": {
+      "clone": "vercel-labs-agent-skills",
+      "title": "Vercel — agent skills",
+      "license": "MIT",
+      "licenseNote": "License: MIT, as stated in the README of vercel-labs/agent-skills (the repository ships no LICENSE file). Copyright (c) Vercel, Inc."
+    },
+    "obra/superpowers": {
+      "clone": "obra-superpowers",
+      "title": "obra/superpowers — engineering workflow skills",
+      "license": "MIT"
+    },
+    "addyosmani/agent-skills": {
+      "clone": "addyosmani-agent-skills",
+      "title": "Addy Osmani — engineering practice skills",
+      "license": "MIT"
+    },
+    "xai-org/grok-build-plugin-cc": {
+      "clone": "xai-org-grok-build-plugin-cc",
+      "title": "xAI — Grok Build plugin for Claude Code",
+      "license": "Apache-2.0"
+    }
+  },
+  "categories": {
+    "tkbk": {
+      "title": "TKBK — российские сервисы",
+      "title_en": "TKBK — Russian services",
+      "text": "Свои скилы TKBK: маркетплейсы, CRM, Авито, ЮKassa, документы, подключение к шлюзу. Работают через MCP tkbk-online/tkbk-mcp."
+    },
+    "claude": {
+      "title": "Claude",
+      "title_en": "Claude",
+      "text": "Официальные скилы Anthropic для Claude и Claude Code."
+    },
+    "gpt-codex": {
+      "title": "GPT / Codex",
+      "title_en": "GPT / Codex",
+      "text": "Каталог скилов OpenAI для Codex CLI; работают и в других агентах."
+    },
+    "deepseek": {
+      "title": "DeepSeek",
+      "title_en": "DeepSeek",
+      "text": "Переносимые скилы из DeepSeek Harness (dsh)."
+    },
+    "glm": {
+      "title": "GLM",
+      "title_en": "GLM",
+      "text": "Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY)."
+    },
+    "grok": {
+      "title": "Grok",
+      "title_en": "Grok",
+      "text": "У xAI пока нет каталога SKILL.md — ссылки на официальные инструменты."
+    },
+    "universal": {
+      "title": "Универсальные",
+      "title_en": "Universal",
+      "text": "Инженерные практики для любой модели: ревью, отладка, TDD, планирование, React и дизайн."
+    }
+  },
+  "skills": [
+    {
+      "source": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Интерфейсы с характером: дизайн-направление, типографика, цвет, движение — без «шаблонного вида ИИ»."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Создание MCP-серверов: проектирование инструментов, SDK на TypeScript и Python, тестирование."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/skill-creator",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Создание и улучшение скилов: структура SKILL.md, проверка срабатывания, оценка качества."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Тестирование веб-приложений через Playwright: запуск, сценарии, скриншоты, логи браузера."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/claude-api",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Справочник по Claude API и SDK (2 МБ, 90 файлов): Messages API, инструменты, стриминг, оценки. Слишком велик для копии — ставится из репозитория Anthropic; формат тот же через шлюз TKBK.",
+      "bridge": true
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/internal-comms",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Внутренние коммуникации компании: статусы, отчёты, объявления, FAQ, записки руководству."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/theme-factory",
+      "category": "claude",
+      "license": "Apache-2.0",
+      "ru": "Готовые темы оформления (палитры и шрифты) для презентаций, документов и веб-артефактов."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/docx",
+      "category": "claude",
+      "bridge": true,
+      "license": "Proprietary (Anthropic)",
+      "ru": "Документы Word: создание, правка, отслеживание изменений. Лицензия не разрешает копировать — ставится из репозитория Anthropic."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/pptx",
+      "category": "claude",
+      "bridge": true,
+      "license": "Proprietary (Anthropic)",
+      "ru": "Презентации PowerPoint: создание и правка по шаблону. Ставится из репозитория Anthropic."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/xlsx",
+      "category": "claude",
+      "bridge": true,
+      "license": "Proprietary (Anthropic)",
+      "ru": "Таблицы Excel: формулы, форматирование, анализ. Ставится из репозитория Anthropic."
+    },
+    {
+      "source": "anthropics/skills",
+      "path": "skills/pdf",
+      "category": "claude",
+      "bridge": true,
+      "license": "Proprietary (Anthropic)",
+      "ru": "PDF: чтение, объединение, формы, OCR. Ставится из репозитория Anthropic."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/security-best-practices",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Проверка безопасности кода по языку и фреймворку: уязвимости, отчёт, исправления."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/security-threat-model",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Модель угроз для системы или фичи: активы, границы доверия, риски, меры."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/security-ownership-map",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Карта ответственности за безопасность по частям репозитория."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/gh-fix-ci",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Починка упавшего CI в GitHub Actions: разбор логов, причина, точечный фикс."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/gh-address-comments",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Ответы на замечания ревьюеров в pull request и правки по ним."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/define-goal",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Формулировка цели задачи до начала работы: критерии готовности, ограничения, проверка."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/cli-creator",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Проектирование и создание CLI-утилит: команды, флаги, вывод, тесты."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/playwright",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Автоматизация браузера через Playwright: тесты, обход страниц, скриншоты."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/jupyter-notebook",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Работа с Jupyter-ноутбуками: запуск ячеек, правка, анализ данных."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/openai-docs",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Поиск по документации OpenAI API (Responses, Chat Completions) — формат совместим со шлюзом TKBK."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/migrate-to-codex",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Перенос конфигурации и правил из других агентов в Codex CLI."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/linear",
+      "category": "gpt-codex",
+      "license": "Apache-2.0",
+      "ru": "Задачи Linear: создание, статусы, связь с кодом."
+    },
+    {
+      "source": "openai/skills",
+      "path": "skills/.curated/vercel-deploy",
+      "category": "gpt-codex",
+      "license": "MIT",
+      "ru": "Деплой проекта на Vercel из агента."
+    },
+    {
+      "source": "deepseek-ai/deepseek-harness",
+      "path": ".agents/skills/dsh-error-handling",
+      "category": "deepseek",
+      "license": "MIT",
+      "ru": "Принципы обработки ошибок: классификация сбоев, повторы, фоновые задачи, понятные сообщения пользователю."
+    },
+    {
+      "source": "deepseek-ai/deepseek-harness",
+      "path": ".agents/skills/dsh-find-simplifications",
+      "category": "deepseek",
+      "license": "MIT",
+      "ru": "Поиск обоснованных упрощений: мёртвый и дублирующий код, лишние абстракции, конфигурация, тесты."
+    },
+    {
+      "source": "deepseek-ai/deepseek-harness",
+      "path": ".agents/skills/dsh-trim-cot-leakage",
+      "category": "deepseek",
+      "license": "MIT",
+      "ru": "Чистка текстов от «утечки рассуждений»: ссылки на черновики, историю решений, «раньше было» — в документации и комментариях."
+    },
+    {
+      "source": "deepseek-ai/deepseek-harness",
+      "path": ".agents/skills/record-browser-gif",
+      "category": "deepseek",
+      "license": "MIT",
+      "ru": "Запись GIF-демо интерфейса через браузер или Playwright и прикрепление к pull request."
+    },
+    {
+      "source": "deepseek-ai/deepseek-harness",
+      "path": ".agents/skills",
+      "category": "deepseek",
+      "bridge": true,
+      "license": "MIT",
+      "ru": "Остальные скилы DeepSeek Harness (ревью, CI, UI, документация) — привязаны к их репозиторию, ставятся оттуда."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glm-master-skill",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Обзор официальных скилов GLM и способы установки (только документация)."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmv-prd-to-app",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Полноценное веб-приложение из PRD и прототипов: схема БД, API, фронтенд, проверка по макетам, деплой-скрипт."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmv-prompt-gen",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Генерация промптов для изображений и видео по описанию или референсу."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmv-resume-screen",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmv-web-replication",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Воспроизведение веб-страницы по скриншоту: вёрстка и стили."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmocr-sdk",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "OCR документов через GLM-OCR SDK: текст, таблицы, формулы."
+    },
+    {
+      "source": "zai-org/GLM-skills",
+      "path": "skills/glmv-doc-based-writing",
+      "category": "glm",
+      "license": "Apache-2.0",
+      "ru": "Написание текстов на основе загруженных документов с сохранением фактов и структуры."
+    },
+    {
+      "source": "xai-org/grok-build-plugin-cc",
+      "path": "plugins/grok-build",
+      "category": "grok",
+      "bridge": true,
+      "license": "Apache-2.0",
+      "ru": "Плагин Claude Code от xAI: делегирование ревью и «спасательных» задач Grok Build CLI (формат плагина, не SKILL.md)."
+    },
+    {
+      "source": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "70 правил производительности React и Next.js от Vercel: водопады запросов, бандл, рендеринг, кэш."
+    },
+    {
+      "source": "vercel-labs/agent-skills",
+      "path": "skills/web-design-guidelines",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Ревью интерфейса по Web Interface Guidelines: доступность, UX, формы, состояния."
+    },
+    {
+      "source": "vercel-labs/agent-skills",
+      "path": "skills/composition-patterns",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Паттерны композиции React-компонентов: compound components, слоты, контекст без prop drilling."
+    },
+    {
+      "source": "vercel-labs/agent-skills",
+      "path": "skills/writing-guidelines",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Правила письменной речи для документации и интерфейсов: ясность, краткость, структура."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/brainstorming",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Брейншторм перед реализацией: вопросы заказчику, варианты, выбор подхода до написания кода."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/systematic-debugging",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Системная отладка: сначала корневая причина, потом исправление; воспроизведение, гипотезы, проверка."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/test-driven-development",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "TDD: красный тест → минимальный код → рефакторинг; запрещает писать код без падающего теста."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/writing-plans",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "План реализации по шагам с проверяемыми результатами — для себя или другого агента."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/executing-plans",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Выполнение готового плана задача за задачей с фиксацией результата и ревью."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/verification-before-completion",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Проверка перед словом «готово»: запустить тесты и показать вывод, а не утверждать."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/requesting-code-review",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Запрос код-ревью: что проверять, в каком контексте, формат ответа."
+    },
+    {
+      "source": "obra/superpowers",
+      "path": "skills/using-git-worktrees",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Изолированная работа в git worktree: ветка на задачу, без конфликтов с основной копией."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/code-review-and-quality",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Код-ревью по пяти осям: корректность, читаемость, архитектура, безопасность, производительность."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/security-and-hardening",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Усиление безопасности: входные данные, секреты, зависимости, права, логирование."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/performance-optimization",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Оптимизация производительности: измерить, найти узкое место, исправить, подтвердить цифрами."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/api-and-interface-design",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Проектирование API и интерфейсов модулей: контракты, версии, ошибки, обратная совместимость."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/documentation-and-adrs",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Документация и ADR: фиксировать решения, README, которые читают."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/planning-and-task-breakdown",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Планирование и декомпозиция задач на проверяемые шаги."
+    },
+    {
+      "source": "addyosmani/agent-skills",
+      "path": "skills/debugging-and-error-recovery",
+      "category": "universal",
+      "license": "MIT",
+      "ru": "Отладка и восстановление после ошибок: воспроизведение, изоляция, защита от повторения."
+    }
+  ]
+}

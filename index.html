@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TKBK Skills Hub — проверенные скилы для ИИ-агентов</title>
+<meta name="description" content="Каталог проверенных SKILL.md для Claude Code, Cursor, Codex и TKBK Agent: Wildberries, Ozon, Яндекс Маркет, Битрикс24, amoCRM, Авито, ЮKassa, документы, плюс официальные скилы Anthropic, OpenAI, DeepSeek, Z.ai и инженерные практики.">
+<style>
+:root{--bg:#08090b;--card:#101114;--line:#292c32;--text:#eeefef;--muted:#b2b5bd;--dim:#959aa5;--accent:#c4f58a;--violet:#b8a6ff;--amber:#f5d58a;--red:#ff8a8a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px}
+header,main,footer{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+header{padding:56px 0 24px}header h1{font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;font-weight:600}
+header p{color:var(--muted);max-width:760px;margin:0 0 18px}
+.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.install{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;max-width:760px}
+.install code{flex:1;overflow-x:auto;white-space:nowrap}
+button{cursor:pointer;border:1px solid var(--line);background:#17191d;color:var(--muted);border-radius:8px;padding:6px 10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+button:hover{border-color:var(--accent);color:var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 8px}nav a{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px}nav a:hover{color:var(--text);border-color:#555a65}
+.search{width:100%;max-width:760px;margin:10px 0 0;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font-size:15px}
+section{padding:28px 0 8px;border-top:1px solid var(--line)}section h2{font-size:24px;margin:0 0 6px;letter-spacing:-.02em;font-weight:600}
+.count{color:var(--dim);font-size:14px;font-weight:400;margin-left:8px}.cat-text{color:var(--dim);margin:0 0 18px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card[hidden]{display:none}.top{display:flex;justify-content:space-between;gap:10px;align-items:center}.name{color:var(--text);font-size:14px}
+.badge{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}.badge.pass{color:var(--accent);border-color:#3a4a2a}.badge.fail{color:var(--red)}.badge.link{color:var(--violet)}
+.desc{margin:0;color:var(--muted);font-size:13.5px}.meta{margin:0;color:var(--dim);font-size:12px}
+.cmd{display:flex;gap:8px;align-items:center;background:#0b0c0e;border:1px solid var(--line);border-radius:8px;padding:6px 8px;margin-top:auto}.cmd code{flex:1;overflow-x:auto;white-space:nowrap;color:var(--muted)}
+.links{margin:0;font-size:13px}.links a{color:var(--dim)}.links a:hover{color:var(--text)}
+.verified{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:32px 0}.verified ul{columns:2;gap:24px;padding-left:18px;color:var(--muted);font-size:13.5px}
+@media (max-width:640px){.verified ul{columns:1}header{padding-top:32px}}
+footer{padding:28px 0 48px;color:var(--dim);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">TKBK Skills Hub</div>
+  <h1>Проверенные скилы для ИИ-агентов</h1>
+  <p>59 скилов в формате SKILL.md для Claude Code, Cursor, Codex CLI, Cline, OpenCode и TKBK Agent: российские маркетплейсы, CRM, Авито и ЮKassa от TKBK плюс официальные скилы Anthropic, OpenAI, DeepSeek и Z.ai и инженерные практики. Каждый проходит аудит безопасности <code>tools/audit.mjs</code>; запись во внешние сервисы — только с вашего подтверждения.</p>
+  <div class="install"><code>npx skills add tkbk-online/skills --skill wb-reviews</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill wb-reviews">копировать</button></div>
+  <nav><a href="#tkbk">TKBK — российские сервисы · 10</a><a href="#claude">Claude · 11</a><a href="#gpt-codex">GPT / Codex · 13</a><a href="#deepseek">DeepSeek · 5</a><a href="#glm">GLM · 7</a><a href="#grok">Grok · 1</a><a href="#universal">Универсальные · 19</a><a href="#verified">Что проверяем</a><a href="https://github.com/tkbk-online/skills" target="_blank" rel="noreferrer noopener">GitHub ↗</a></nav>
+  <input class="search" type="search" placeholder="Поиск по названию и описанию: отзывы, ревью, React, оплата…" aria-label="Поиск по каталогу">
+</header>
+<main>
+
+<section id="tkbk">
+  <h2>TKBK — российские сервисы <span class="count">10</span></h2>
+  <p class="cat-text">Свои скилы TKBK: маркетплейсы, CRM, Авито, ЮKassa, документы, подключение к шлюзу. Работают через MCP tkbk-online/tkbk-mcp.</p>
+  <div class="grid">
+    <article class="card" data-name="amocrm-followup" data-text="amocrm-followup находит сделки amocrm без движения n дней, пишет персональное сообщение под этап воронки, добавляет примечание и ставит задачу менеджеру. дожим «зависших» сделок в amocrm через mcp tkbk (amo_leads, amo_contacts, amo_add_note) и api v4 — находит сделки без движения n дней, пишет персональные follow-up сообщения по этапу воронки, добавляет примечания и ставит задачи менеджерам. применяй, когда просят «кого дожать», «какие сделки зависли», «напиши follow-up клиентам», «поставь задачи по сделкам без активности». tkbk-online/skills">
+      <div class="top"><code class="name">amocrm-followup</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Находит сделки amoCRM без движения N дней, пишет персональное сообщение под этап воронки, добавляет примечание и ставит задачу менеджеру.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill amocrm-followup</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill amocrm-followup">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/amocrm-followup" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="avito-replies" data-text="avito-replies разбирает непрочитанные чаты авито по объявлениям, отвечает о наличии, цене, адресе и торге по правилам продавца; мошенников и споры отдаёт человеку. ответы в чатах авито через mcp tkbk (avito_chats, avito_messages, avito_items, avito_send_message) — разбирает непрочитанные сообщения, отвечает по шаблонам продавца о наличии, цене, адресе и торге, спам и агрессию отдаёт человеку. применяй, когда просят «ответь в чатах авито», «что пишут по объявлению», «разбери непрочитанные на авито». tkbk-online/skills">
+      <div class="top"><code class="name">avito-replies</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Разбирает непрочитанные чаты Авито по объявлениям, отвечает о наличии, цене, адресе и торге по правилам продавца; мошенников и споры отдаёт человеку.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill avito-replies</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill avito-replies">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/avito-replies" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="bitrix24-leads" data-text="bitrix24-leads сводка новых лидов битрикс24, поиск дублей по телефону и почте, лид из письма или переписки, задача менеджеру со сроком. работа с лидами битрикс24 через mcp tkbk (b24_leads, b24_deals, b24_add_lead, b24_add_task) и rest-вебхук — разбор новых лидов, поиск дублей, создание лида из письма или переписки, задача менеджеру, утренняя сводка. применяй, когда просят «какие лиды пришли», «создай лид из этого письма», «поставь задачу менеджеру», «кто без ответа в crm». tkbk-online/skills">
+      <div class="top"><code class="name">bitrix24-leads</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Сводка новых лидов Битрикс24, поиск дублей по телефону и почте, лид из письма или переписки, задача менеджеру со сроком.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill bitrix24-leads</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill bitrix24-leads">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/bitrix24-leads" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="ozon-questions" data-text="ozon-questions новые вопросы в карточках ozon через seller api, ответы с опорой на остатки и характеристики, публикация после подтверждения; скрипт в комплекте. ответы на вопросы покупателей о товарах ozon через seller api (/v1/question/list → черновики → подтверждение → /v1/question/answer/create) скриптом scripts/ozon-questions.mjs; остатки и товары — через mcp tkbk (ozon_products, ozon_stocks). применяй, когда просят «ответить на вопросы на ozon», «что спрашивают покупатели», «закрыть новые вопросы». tkbk-online/skills">
+      <div class="top"><code class="name">ozon-questions</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Новые вопросы в карточках Ozon через Seller API, ответы с опорой на остатки и характеристики, публикация после подтверждения; скрипт в комплекте.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill ozon-questions</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill ozon-questions">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/ozon-questions" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="ru-legal-docs" data-text="ru-legal-docs договор возмездного оказания услуг и публичная оферта по шаблонам рф с реквизитами, ндс/усн, 152-фз и зозпп; чек-лист проверки чужого договора. договор и публичная оферта по шаблонам рф — договор возмездного оказания услуг (гл. 39 гк рф), публичная оферта для сайта/сервиса (ст. 435–438 гк рф), реквизиты сторон (инн, огрн/огрнип, кпп, банк), ндс и усн, 152-фз, закон о защите прав потребителей; шаблоны в templates/. применяй, когда просят «составь договор», «напиши оферту для сайта», «проверь договор подрядчика», «нужны условия для клиентов». tkbk-online/skills">
+      <div class="top"><code class="name">ru-legal-docs</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Договор возмездного оказания услуг и публичная оферта по шаблонам РФ с реквизитами, НДС/УСН, 152-ФЗ и ЗоЗПП; чек-лист проверки чужого договора.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill ru-legal-docs</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill ru-legal-docs">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/ru-legal-docs" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="tkbk-setup" data-text="tkbk-setup base url и ключ tkbk для claude code, codex, cursor, cline, zed, n8n, dify, sdk и curl; проверка ключа скриптом; разбор ошибок 401, 402, 404, 429. подключение любого инструмента к шлюзу tkbk (api.tkbk.online, один ключ cr_… для claude, gpt, deepseek, glm, grok) — claude code, codex cli, cursor, cline, kilo code, zed, jetbrains/continue, aider, n8n, dify, open webui, opencode, chatbox, sdk anthropic/openai, curl; выбор base url по формату api, проверка ключа скриптом scripts/tkbk-check.mjs, разбор ошибок 401/402/404/429. применяй, когда просят «подключи tkbk», «настрой claude code / cursor / codex на tkbk», «какой base url», «не работает ключ cr_». tkbk-online/skills">
+      <div class="top"><code class="name">tkbk-setup</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Base URL и ключ TKBK для Claude Code, Codex, Cursor, Cline, Zed, n8n, Dify, SDK и curl; проверка ключа скриптом; разбор ошибок 401, 402, 404, 429.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill tkbk-setup</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill tkbk-setup">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/tkbk-setup" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="tz-from-chat" data-text="tz-from-chat превращает переписку с заказчиком в техническое задание: цели, роли, сценарии, требования moscow, интеграции, критерии приёмки, открытые вопросы. техническое задание из переписки — превращает чат с заказчиком, письма, голосовые расшифровки и заметки со встречи в структурированное тз (цели, роли, сценарии, требования moscow, интеграции, данные, критерии приёмки, открытые вопросы, оценка). применяй, когда просят «сделай тз из переписки», «оформи требования», «что клиент хочет — по пунктам», «составь задание разработчику». tkbk-online/skills">
+      <div class="top"><code class="name">tz-from-chat</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Превращает переписку с заказчиком в техническое задание: цели, роли, сценарии, требования MoSCoW, интеграции, критерии приёмки, открытые вопросы.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill tz-from-chat</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill tz-from-chat">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/tz-from-chat" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="wb-reviews" data-text="wb-reviews забирает отзывы wildberries без ответа, группирует по оценкам и товарам, пишет ответы по правилам wb и публикует только утверждённые. ответы на отзывы покупателей wildberries через mcp-сервер tkbk (wb_feedbacks → черновики → подтверждение → wb_answer_feedback). применяй, когда просят «ответить на отзывы wb», «разобрать негатив на wildberries», «что пишут покупатели», «отработать отзывы с 1–3 звёздами». tkbk-online/skills">
+      <div class="top"><code class="name">wb-reviews</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Забирает отзывы Wildberries без ответа, группирует по оценкам и товарам, пишет ответы по правилам WB и публикует только утверждённые.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill wb-reviews</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill wb-reviews">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/wb-reviews" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="yandex-market-stock" data-text="yandex-market-stock остатки яндекс маркета по складам и оборачиваемость, продажи за 14 дней, дни запаса по каждому sku и список «пора дозаказать». остатки и алерты по товарам яндекс маркета — магазины и заказы через mcp tkbk (ym_campaigns, ym_orders, ym_offers), остатки и оборачиваемость через api маркета скриптом scripts/ym-stocks.mjs; считает дни запаса и список «пора дозаказать». применяй, когда просят «проверь остатки на маркете», «что заканчивается», «алерт по остаткам», «сколько дней хватит товара». tkbk-online/skills">
+      <div class="top"><code class="name">yandex-market-stock</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Остатки Яндекс Маркета по складам и оборачиваемость, продажи за 14 дней, дни запаса по каждому SKU и список «пора дозаказать».</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill yandex-market-stock</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill yandex-market-stock">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/yandex-market-stock" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+    <article class="card" data-name="yookassa-sbp" data-text="yookassa-sbp оплата юkassa и сбп в коде: создание платежа, страница оплаты, вебхук с проверкой ip и статуса, чек 54-фз, возвраты, тестовый магазин; скрипт для проверки. интеграция приёма оплаты юkassa и сбп в код — создание платежа (post /v3/payments, payment_method_data sbp, idempotence-key), страница оплаты, вебхук payment.succeeded с проверкой ip и статуса, чек 54-фз, возвраты, тестовый магазин; скрипт scripts/yookassa-sbp.mjs для проверки. применяй, когда просят «подключить юkassa», «оплату по сбп», «принять платёж в приложении / боте / на сайте», «вебхук оплаты». tkbk-online/skills">
+      <div class="top"><code class="name">yookassa-sbp</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Оплата ЮKassa и СБП в коде: создание платежа, страница оплаты, вебхук с проверкой IP и статуса, чек 54-ФЗ, возвраты, тестовый магазин; скрипт для проверки.</p>
+      <p class="meta">TKBK · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill yookassa-sbp</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill yookassa-sbp">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/tkbk/yookassa-sbp" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="claude">
+  <h2>Claude <span class="count">11</span></h2>
+  <p class="cat-text">Официальные скилы Anthropic для Claude и Claude Code.</p>
+  <div class="grid">
+    <article class="card" data-name="frontend-design" data-text="frontend-design интерфейсы с характером: дизайн-направление, типографика, цвет, движение — без «шаблонного вида ии». guidance for distinctive, intentional visual design when building new ui or reshaping an existing one. helps with aesthetic direction, typography, and making choices that don't read as templated defaults. anthropics/skills">
+      <div class="top"><code class="name">frontend-design</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Интерфейсы с характером: дизайн-направление, типографика, цвет, движение — без «шаблонного вида ИИ».</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill frontend-design</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill frontend-design">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/frontend-design" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/frontend-design" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="internal-comms" data-text="internal-comms внутренние коммуникации компании: статусы, отчёты, объявления, faq, записки руководству. a set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3p updates, company newsletters, faqs, incident reports, project updates, etc.). anthropics/skills">
+      <div class="top"><code class="name">internal-comms</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Внутренние коммуникации компании: статусы, отчёты, объявления, FAQ, записки руководству.</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill internal-comms</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill internal-comms">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/internal-comms" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/internal-comms" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="mcp-builder" data-text="mcp-builder создание mcp-серверов: проектирование инструментов, sdk на typescript и python, тестирование. guide for creating high-quality mcp (model context protocol) servers that enable llms to interact with external services through well-designed tools. use when building mcp servers to integrate external apis or services, whether in python (fastmcp) or node/typescript (mcp sdk). anthropics/skills">
+      <div class="top"><code class="name">mcp-builder</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Создание MCP-серверов: проектирование инструментов, SDK на TypeScript и Python, тестирование.</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill mcp-builder</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill mcp-builder">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/mcp-builder" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/mcp-builder" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="skill-creator" data-text="skill-creator создание и улучшение скилов: структура skill.md, проверка срабатывания, оценка качества. create new skills, modify and improve existing skills, and measure skill performance. use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. anthropics/skills">
+      <div class="top"><code class="name">skill-creator</code><span class="badge pass">✓ проверен · ⚠ 3</span></div>
+      <p class="desc">Создание и улучшение скилов: структура SKILL.md, проверка срабатывания, оценка качества.</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill skill-creator</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill skill-creator">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/skill-creator" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/skill-creator" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="theme-factory" data-text="theme-factory готовые темы оформления (палитры и шрифты) для презентаций, документов и веб-артефактов. toolkit for styling artifacts with a theme. these artifacts can be slides, docs, reportings, html landing pages, etc. there are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly. anthropics/skills">
+      <div class="top"><code class="name">theme-factory</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Готовые темы оформления (палитры и шрифты) для презентаций, документов и веб-артефактов.</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill theme-factory</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill theme-factory">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/theme-factory" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/theme-factory" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="webapp-testing" data-text="webapp-testing тестирование веб-приложений через playwright: запуск, сценарии, скриншоты, логи браузера. toolkit for interacting with and testing local web applications using playwright. supports verifying frontend functionality, debugging ui behavior, capturing browser screenshots, and viewing browser logs. anthropics/skills">
+      <div class="top"><code class="name">webapp-testing</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Тестирование веб-приложений через Playwright: запуск, сценарии, скриншоты, логи браузера.</p>
+      <p class="meta">anthropics/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill webapp-testing</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill webapp-testing">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/claude/webapp-testing" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/webapp-testing" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="claude-api" data-text="claude-api справочник по claude api и sdk (2 мб, 90 файлов): messages api, инструменты, стриминг, оценки. слишком велик для копии — ставится из репозитория anthropic; формат тот же через шлюз tkbk.  anthropics/skills">
+      <div class="top"><code class="name">claude-api</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Справочник по Claude API и SDK (2 МБ, 90 файлов): Messages API, инструменты, стриминг, оценки. Слишком велик для копии — ставится из репозитория Anthropic; формат тот же через шлюз TKBK.</p>
+      <p class="meta">anthropics/skills · Apache-2.0</p>
+      <div class="cmd"><code>npx skills add anthropics/skills --skill claude-api</code><button type="button" data-copy="npx skills add anthropics/skills --skill claude-api">копировать</button></div>
+      <p class="links"><a href="https://github.com/anthropics/skills/tree/main/skills/claude-api" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+    <article class="card" data-name="docx" data-text="docx документы word: создание, правка, отслеживание изменений. лицензия не разрешает копировать — ставится из репозитория anthropic.  anthropics/skills">
+      <div class="top"><code class="name">docx</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Документы Word: создание, правка, отслеживание изменений. Лицензия не разрешает копировать — ставится из репозитория Anthropic.</p>
+      <p class="meta">anthropics/skills · Proprietary (Anthropic)</p>
+      <div class="cmd"><code>npx skills add anthropics/skills --skill docx</code><button type="button" data-copy="npx skills add anthropics/skills --skill docx">копировать</button></div>
+      <p class="links"><a href="https://github.com/anthropics/skills/tree/main/skills/docx" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+    <article class="card" data-name="pdf" data-text="pdf pdf: чтение, объединение, формы, ocr. ставится из репозитория anthropic.  anthropics/skills">
+      <div class="top"><code class="name">pdf</code><span class="badge link">ссылка</span></div>
+      <p class="desc">PDF: чтение, объединение, формы, OCR. Ставится из репозитория Anthropic.</p>
+      <p class="meta">anthropics/skills · Proprietary (Anthropic)</p>
+      <div class="cmd"><code>npx skills add anthropics/skills --skill pdf</code><button type="button" data-copy="npx skills add anthropics/skills --skill pdf">копировать</button></div>
+      <p class="links"><a href="https://github.com/anthropics/skills/tree/main/skills/pdf" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+    <article class="card" data-name="pptx" data-text="pptx презентации powerpoint: создание и правка по шаблону. ставится из репозитория anthropic.  anthropics/skills">
+      <div class="top"><code class="name">pptx</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Презентации PowerPoint: создание и правка по шаблону. Ставится из репозитория Anthropic.</p>
+      <p class="meta">anthropics/skills · Proprietary (Anthropic)</p>
+      <div class="cmd"><code>npx skills add anthropics/skills --skill pptx</code><button type="button" data-copy="npx skills add anthropics/skills --skill pptx">копировать</button></div>
+      <p class="links"><a href="https://github.com/anthropics/skills/tree/main/skills/pptx" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+    <article class="card" data-name="xlsx" data-text="xlsx таблицы excel: формулы, форматирование, анализ. ставится из репозитория anthropic.  anthropics/skills">
+      <div class="top"><code class="name">xlsx</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Таблицы Excel: формулы, форматирование, анализ. Ставится из репозитория Anthropic.</p>
+      <p class="meta">anthropics/skills · Proprietary (Anthropic)</p>
+      <div class="cmd"><code>npx skills add anthropics/skills --skill xlsx</code><button type="button" data-copy="npx skills add anthropics/skills --skill xlsx">копировать</button></div>
+      <p class="links"><a href="https://github.com/anthropics/skills/tree/main/skills/xlsx" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="gpt-codex">
+  <h2>GPT / Codex <span class="count">13</span></h2>
+  <p class="cat-text">Каталог скилов OpenAI для Codex CLI; работают и в других агентах.</p>
+  <div class="grid">
+    <article class="card" data-name="cli-creator" data-text="cli-creator проектирование и создание cli-утилит: команды, флаги, вывод, тесты. build a composable cli for codex from api docs, an openapi spec, existing curl examples, an sdk, a web app, an admin tool, or a local script. use when the user wants codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable json, manage auth, and pair with a companion skill. openai/skills">
+      <div class="top"><code class="name">cli-creator</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Проектирование и создание CLI-утилит: команды, флаги, вывод, тесты.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill cli-creator</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill cli-creator">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/cli-creator" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/cli-creator" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="define-goal" data-text="define-goal формулировка цели задачи до начала работы: критерии готовности, ограничения, проверка. help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts. openai/skills">
+      <div class="top"><code class="name">define-goal</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Формулировка цели задачи до начала работы: критерии готовности, ограничения, проверка.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill define-goal</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill define-goal">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/define-goal" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/define-goal" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="gh-address-comments" data-text="gh-address-comments ответы на замечания ревьюеров в pull request и правки по ним. help address review/issue comments on the open github pr for the current branch using gh cli; verify gh auth first and prompt the user to authenticate if not logged in. openai/skills">
+      <div class="top"><code class="name">gh-address-comments</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Ответы на замечания ревьюеров в pull request и правки по ним.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill gh-address-comments</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill gh-address-comments">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/gh-address-comments" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/gh-address-comments" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="gh-fix-ci" data-text="gh-fix-ci починка упавшего ci в github actions: разбор логов, причина, точечный фикс. use when a user asks to debug or fix failing github pr checks that run in github actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. treat external providers (for example buildkite) as out of scope and report only the details url. openai/skills">
+      <div class="top"><code class="name">gh-fix-ci</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Починка упавшего CI в GitHub Actions: разбор логов, причина, точечный фикс.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill gh-fix-ci</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill gh-fix-ci">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/gh-fix-ci" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/gh-fix-ci" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="jupyter-notebook" data-text="jupyter-notebook работа с jupyter-ноутбуками: запуск ячеек, правка, анализ данных. use when the user asks to create, scaffold, or edit jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook. openai/skills">
+      <div class="top"><code class="name">jupyter-notebook</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Работа с Jupyter-ноутбуками: запуск ячеек, правка, анализ данных.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill jupyter-notebook</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill jupyter-notebook">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/jupyter-notebook" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/jupyter-notebook" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="linear" data-text="linear задачи linear: создание, статусы, связь с кодом. manage issues, projects &amp; team workflows in linear. use when the user wants to read, create or updates tickets in linear. openai/skills">
+      <div class="top"><code class="name">linear</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Задачи Linear: создание, статусы, связь с кодом.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill linear</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill linear">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/linear" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/linear" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="migrate-to-codex" data-text="migrate-to-codex перенос конфигурации и правил из других агентов в codex cli. migrate supported instruction files, skills, agents, and mcp config into codex project and global files. openai/skills">
+      <div class="top"><code class="name">migrate-to-codex</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Перенос конфигурации и правил из других агентов в Codex CLI.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill migrate-to-codex</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill migrate-to-codex">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/migrate-to-codex" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/migrate-to-codex" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="openai-docs" data-text="openai-docs поиск по документации openai api (responses, chat completions) — формат совместим со шлюзом tkbk. use when the user asks how to build with openai products or apis, asks about codex itself or choosing codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use openai docs mcp tools for non-codex docs questions, use the codex manual helper first for broad codex self-knowledge, and restrict fallback browsing to official openai domains. openai/skills">
+      <div class="top"><code class="name">openai-docs</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Поиск по документации OpenAI API (Responses, Chat Completions) — формат совместим со шлюзом TKBK.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill openai-docs</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill openai-docs">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/openai-docs" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/openai-docs" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="playwright" data-text="playwright автоматизация браузера через playwright: тесты, обход страниц, скриншоты. use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, ui-flow debugging) via `playwright-cli` or the bundled wrapper script. openai/skills">
+      <div class="top"><code class="name">playwright</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Автоматизация браузера через Playwright: тесты, обход страниц, скриншоты.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill playwright</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill playwright">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/playwright" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/playwright" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="security-best-practices" data-text="security-best-practices проверка безопасности кода по языку и фреймворку: уязвимости, отчёт, исправления. perform language and framework specific security best-practice reviews and suggest improvements. trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. trigger only for supported languages (python, javascript/typescript, go). do not trigger for general code review, debugging, or non-security tasks. openai/skills">
+      <div class="top"><code class="name">security-best-practices</code><span class="badge pass">✓ проверен · ⚠ 24</span></div>
+      <p class="desc">Проверка безопасности кода по языку и фреймворку: уязвимости, отчёт, исправления.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill security-best-practices</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill security-best-practices">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-best-practices" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-best-practices" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="security-ownership-map" data-text="security-ownership-map карта ответственности за безопасность по частям репозитория. analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export csv/json for graph databases and visualization. trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, codeowners reality checks for risk, sensitive hotspots, or ownership clusters). do not trigger for general maintainer lists or non-security ownership questions. openai/skills">
+      <div class="top"><code class="name">security-ownership-map</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Карта ответственности за безопасность по частям репозитория.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill security-ownership-map</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill security-ownership-map">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-ownership-map" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-ownership-map" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="security-threat-model" data-text="security-threat-model модель угроз для системы или фичи: активы, границы доверия, риски, меры. repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise markdown threat model. trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform appsec threat modeling. do not trigger for general architecture summaries, code review, or non-security design work. openai/skills">
+      <div class="top"><code class="name">security-threat-model</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Модель угроз для системы или фичи: активы, границы доверия, риски, меры.</p>
+      <p class="meta">openai/skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill security-threat-model</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill security-threat-model">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-threat-model" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-threat-model" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="vercel-deploy" data-text="vercel-deploy деплой проекта на vercel из агента. deploy applications and websites to vercel. use when the user requests deployment actions like &quot;deploy my app&quot;, &quot;deploy and give me the link&quot;, &quot;push this live&quot;, or &quot;create a preview deployment&quot;. openai/skills">
+      <div class="top"><code class="name">vercel-deploy</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Деплой проекта на Vercel из агента.</p>
+      <p class="meta">openai/skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill vercel-deploy</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill vercel-deploy">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/vercel-deploy" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/openai/skills/tree/49f948faa925/skills/.curated/vercel-deploy" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="deepseek">
+  <h2>DeepSeek <span class="count">5</span></h2>
+  <p class="cat-text">Переносимые скилы из DeepSeek Harness (dsh).</p>
+  <div class="grid">
+    <article class="card" data-name="dsh-error-handling" data-text="dsh-error-handling принципы обработки ошибок: классификация сбоев, повторы, фоновые задачи, понятные сообщения пользователю. apply error-handling principles when designing or reviewing failures, recovery, retries, background tasks, and user-visible error reports. deepseek-ai/deepseek-harness">
+      <div class="top"><code class="name">dsh-error-handling</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Принципы обработки ошибок: классификация сбоев, повторы, фоновые задачи, понятные сообщения пользователю.</p>
+      <p class="meta">deepseek-ai/deepseek-harness · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill dsh-error-handling</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill dsh-error-handling">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-error-handling" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-error-handling" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="dsh-find-simplifications" data-text="dsh-find-simplifications поиск обоснованных упрощений: мёртвый и дублирующий код, лишние абстракции, конфигурация, тесты. find evidence-backed simplifications in deepseek harness code, apis, configuration, tests, and prose; write or consolidate proposals, identify small inline cleanups, or assess simplifications from another branch. use for removing dead, duplicated, speculative, or unnecessarily maintained behavior and infrastructure. deepseek-ai/deepseek-harness">
+      <div class="top"><code class="name">dsh-find-simplifications</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Поиск обоснованных упрощений: мёртвый и дублирующий код, лишние абстракции, конфигурация, тесты.</p>
+      <p class="meta">deepseek-ai/deepseek-harness · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill dsh-find-simplifications</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill dsh-find-simplifications">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-find-simplifications" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-find-simplifications" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="dsh-trim-cot-leakage" data-text="dsh-trim-cot-leakage чистка текстов от «утечки рассуждений»: ссылки на черновики, историю решений, «раньше было» — в документации и комментариях. use when auditing or fixing prose that reads like a leaked reasoning transcript — dead design-session citations such as (decision n), audit item codes, or §n of uncommitted drafts; change narration such as &quot;used to&quot;, &quot;no longer&quot;, &quot;this cut&quot;; stack or review vantage (&quot;a later pr in this stack&quot;, &quot;rejected in review&quot;); reviewer-addressed justifications; control-flow narration; or hedged planning residue in comments, jsdoc, docs, or agent notes. deepseek-ai/deepseek-harness">
+      <div class="top"><code class="name">dsh-trim-cot-leakage</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Чистка текстов от «утечки рассуждений»: ссылки на черновики, историю решений, «раньше было» — в документации и комментариях.</p>
+      <p class="meta">deepseek-ai/deepseek-harness · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill dsh-trim-cot-leakage</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill dsh-trim-cot-leakage">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-trim-cot-leakage" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-trim-cot-leakage" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="record-browser-gif" data-text="record-browser-gif запись gif-демо интерфейса через браузер или playwright и прикрепление к pull request. record browser or web ui interaction demos as optimized gifs using the available browser-control workflow, optional playwright videos for higher capture frame rates, and deterministic encoding, then attach the gif to a pull request with `gh --attach`, falling back to a dedicated assets branch where attach cannot apply. use when asked to make, record, or generate a gif that demonstrates a browser workflow, and for every pull request that changes product-user-visible gui behavior, which must include a gif recorded from the pull request's real server and model flow. deepseek-ai/deepseek-harness">
+      <div class="top"><code class="name">record-browser-gif</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Запись GIF-демо интерфейса через браузер или Playwright и прикрепление к pull request.</p>
+      <p class="meta">deepseek-ai/deepseek-harness · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill record-browser-gif</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill record-browser-gif">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/deepseek/record-browser-gif" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/record-browser-gif" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="skills" data-text="skills остальные скилы deepseek harness (ревью, ci, ui, документация) — привязаны к их репозиторию, ставятся оттуда.  deepseek-ai/deepseek-harness">
+      <div class="top"><code class="name">skills</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Остальные скилы DeepSeek Harness (ревью, CI, UI, документация) — привязаны к их репозиторию, ставятся оттуда.</p>
+      <p class="meta">deepseek-ai/deepseek-harness · MIT</p>
+      
+      <p class="links"><a href="https://github.com/deepseek-ai/deepseek-harness/tree/main/.agents/skills" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="glm">
+  <h2>GLM <span class="count">7</span></h2>
+  <p class="cat-text">Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY).</p>
+  <div class="grid">
+    <article class="card" data-name="glm-master-skill" data-text="glm-master-skill обзор официальных скилов glm и способы установки (только документация). documentation-only master skill for glm ecosystem discovery and installation.
+this skill does not execute scripts or subprocess commands.
+it provides a curated list of official glm skills, install methods, and source links. zai-org/glm-skills">
+      <div class="top"><code class="name">glm-master-skill</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Обзор официальных скилов GLM и способы установки (только документация).</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glm-master-skill</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glm-master-skill">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glm-master-skill" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glm-master-skill" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmocr-sdk" data-text="glmocr-sdk ocr документов через glm-ocr sdk: текст, таблицы, формулы. trigger when: (1) user wants to extract text, tables, formulas, or structured data from images/pdfs/scanned documents, (2) user mentions &quot;ocr&quot;, &quot;文字识别&quot;, &quot;文档解析&quot;, (3) user has a document (screenshot, scanned page, invoice, paper, whiteboard photo) and needs its content in structured form, (4) user asks to parse, digitize, or extract content from a visual document.
+
+invokes the glm-ocr sdk (pip install glmocr) to parse documents via zhipu's cloud api. no gpu required. returns structured json (regions with labels + bounding boxes) and markdown. agent can operate entirely via cli — no yaml files needed.
+
+not for: real-time camera feeds, audio transcription, or non-document images (photos, illustrations). zai-org/glm-skills">
+      <div class="top"><code class="name">glmocr-sdk</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">OCR документов через GLM-OCR SDK: текст, таблицы, формулы.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmocr-sdk</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmocr-sdk">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmocr-sdk" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmocr-sdk" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmv-doc-based-writing" data-text="glmv-doc-based-writing написание текстов на основе загруженных документов с сохранением фактов и структуры. write a textual content based on given document(s) and requirements, using zhipu glm-v multimodal model. read and comprehend one or multiple documents (pdf/docx), write a content in markdown format according to the specified requirements. use when the user wants to draft a paper/article/essay/report/review/post/brief/proposal/plan, etc. zai-org/glm-skills">
+      <div class="top"><code class="name">glmv-doc-based-writing</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Написание текстов на основе загруженных документов с сохранением фактов и структуры.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-doc-based-writing</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-doc-based-writing">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-doc-based-writing" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-doc-based-writing" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmv-prd-to-app" data-text="glmv-prd-to-app полноценное веб-приложение из prd и прототипов: схема бд, api, фронтенд, проверка по макетам, деплой-скрипт. build a complete, production-ready full-stack web application from prd documents, prototype images, and resource files. handles the entire pipeline: system design, database schema, seed data, backend api, frontend ui, visual verification against prototypes, and deployment script generation.  use this skill whenever the user: - provides a prd (product requirement document) and wants a working app built - says things like &quot;根据prd开发&quot;, &quot;build from prd&quot;, &quot;implement this product&quot;, &quot;把需求文档做成应用&quot;, &quot;develop this app from requirements&quot; - has prototype images + requirements and wants full-stack implementation - wants to turn product specifications into a running web application - mentions building an app from wireframes/mockups combined with a requirements doc  trigger this skill even if the user just says &quot;帮我开发&quot; or &quot;build this&quot; with prd materials present in the working directory. zai-org/glm-skills">
+      <div class="top"><code class="name">glmv-prd-to-app</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Полноценное веб-приложение из PRD и прототипов: схема БД, API, фронтенд, проверка по макетам, деплой-скрипт.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-prd-to-app</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-prd-to-app">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-prd-to-app" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prd-to-app" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmv-prompt-gen" data-text="glmv-prompt-gen генерация промптов для изображений и видео по описанию или референсу. analyze images/videos and generate professional prompts for text-to-image and text-to-video ai tools (midjourney, stable diffusion, dall-e, sora, runway, kling, pika). use when the user wants to generate prompts from reference images/videos, create ai art prompts, or get prompt engineering suggestions from visual content. zai-org/glm-skills">
+      <div class="top"><code class="name">glmv-prompt-gen</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Генерация промптов для изображений и видео по описанию или референсу.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-prompt-gen</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-prompt-gen">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-prompt-gen" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prompt-gen" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmv-resume-screen" data-text="glmv-resume-screen скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт. screen and evaluate resumes against criteria using zhipu glm-v multimodal model. reads multiple resume files (pdf/docx/txt), compares against user-defined screening criteria, and outputs a markdown table with pass/fail analysis. use when the user wants to filter resumes, compare candidates, or batch-evaluate job applications. zai-org/glm-skills">
+      <div class="top"><code class="name">glmv-resume-screen</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-resume-screen</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-resume-screen">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-resume-screen" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-resume-screen" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="glmv-web-replication" data-text="glmv-web-replication воспроизведение веб-страницы по скриншоту: вёрстка и стили. frontend visual replication skill. explores a target website’s publicly visible pages via playwright mcp or agent-browser, captures screenshots and layout information, then generates a static or client-side frontend replica that approximates the original’s visual appearance and page structure. this skill replicates frontend presentation only — it does not reproduce backend logic, server-side behavior, databases, or any non-public content. the user is responsible for ensuring they have proper authorization (ownership, license, or explicit permission) before replicating any website.  ⚠️ authorization gate: before starting, the agent must confirm with the user that they have the legal right to replicate the target site. if the user cannot confirm, the skill must refuse to proceed. zai-org/glm-skills">
+      <div class="top"><code class="name">glmv-web-replication</code><span class="badge pass">✓ проверен · ⚠ 6</span></div>
+      <p class="desc">Воспроизведение веб-страницы по скриншоту: вёрстка и стили.</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-web-replication</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-web-replication">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-web-replication" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-web-replication" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="grok">
+  <h2>Grok <span class="count">1</span></h2>
+  <p class="cat-text">У xAI пока нет каталога SKILL.md — ссылки на официальные инструменты.</p>
+  <div class="grid">
+    <article class="card" data-name="grok-build" data-text="grok-build плагин claude code от xai: делегирование ревью и «спасательных» задач grok build cli (формат плагина, не skill.md).  xai-org/grok-build-plugin-cc">
+      <div class="top"><code class="name">grok-build</code><span class="badge link">ссылка</span></div>
+      <p class="desc">Плагин Claude Code от xAI: делегирование ревью и «спасательных» задач Grok Build CLI (формат плагина, не SKILL.md).</p>
+      <p class="meta">xai-org/grok-build-plugin-cc · Apache-2.0</p>
+      
+      <p class="links"><a href="https://github.com/xai-org/grok-build-plugin-cc/tree/main/plugins/grok-build" target="_blank" rel="noreferrer noopener">репозиторий источника ↗</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="universal">
+  <h2>Универсальные <span class="count">19</span></h2>
+  <p class="cat-text">Инженерные практики для любой модели: ревью, отладка, TDD, планирование, React и дизайн.</p>
+  <div class="grid">
+    <article class="card" data-name="api-and-interface-design" data-text="api-and-interface-design проектирование api и интерфейсов модулей: контракты, версии, ошибки, обратная совместимость. guides stable api and interface design. use when designing apis, module boundaries, or any public interface. use when creating rest or graphql endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend. addyosmani/agent-skills">
+      <div class="top"><code class="name">api-and-interface-design</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Проектирование API и интерфейсов модулей: контракты, версии, ошибки, обратная совместимость.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill api-and-interface-design</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill api-and-interface-design">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/api-and-interface-design" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/api-and-interface-design" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="brainstorming" data-text="brainstorming брейншторм перед реализацией: вопросы заказчику, варианты, выбор подхода до написания кода. you must use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation). obra/superpowers">
+      <div class="top"><code class="name">brainstorming</code><span class="badge pass">✓ проверен · ⚠ 2</span></div>
+      <p class="desc">Брейншторм перед реализацией: вопросы заказчику, варианты, выбор подхода до написания кода.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill brainstorming</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill brainstorming">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/brainstorming" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/brainstorming" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="code-review-and-quality" data-text="code-review-and-quality код-ревью по пяти осям: корректность, читаемость, архитектура, безопасность, производительность. conducts multi-axis code review. use before merging any change. use when reviewing code written by yourself, another agent, or a human. use when you need to assess code quality across multiple dimensions before it enters the main branch. use when asked to review a diff or a pull request, even when the diff is pasted inline. addyosmani/agent-skills">
+      <div class="top"><code class="name">code-review-and-quality</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Код-ревью по пяти осям: корректность, читаемость, архитектура, безопасность, производительность.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill code-review-and-quality</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill code-review-and-quality">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/code-review-and-quality" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/code-review-and-quality" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="debugging-and-error-recovery" data-text="debugging-and-error-recovery отладка и восстановление после ошибок: воспроизведение, изоляция, защита от повторения. guides systematic root-cause debugging. use when tests fail, builds break, something that worked yesterday broke, behavior doesn't match expectations, or you encounter any unexpected error. use when you need to figure out what broke and why — a systematic approach to finding and fixing the root cause rather than guessing. addyosmani/agent-skills">
+      <div class="top"><code class="name">debugging-and-error-recovery</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Отладка и восстановление после ошибок: воспроизведение, изоляция, защита от повторения.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill debugging-and-error-recovery</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill debugging-and-error-recovery">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/debugging-and-error-recovery" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/debugging-and-error-recovery" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="documentation-and-adrs" data-text="documentation-and-adrs документация и adr: фиксировать решения, readme, которые читают. records decisions and documentation. use when you need to document an architecture decision (adr) or the reasoning behind a design choice, when changing public apis, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase. addyosmani/agent-skills">
+      <div class="top"><code class="name">documentation-and-adrs</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Документация и ADR: фиксировать решения, README, которые читают.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill documentation-and-adrs</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill documentation-and-adrs">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/documentation-and-adrs" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/documentation-and-adrs" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="executing-plans" data-text="executing-plans выполнение готового плана задача за задачей с фиксацией результата и ревью. use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available obra/superpowers">
+      <div class="top"><code class="name">executing-plans</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Выполнение готового плана задача за задачей с фиксацией результата и ревью.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill executing-plans</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill executing-plans">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/executing-plans" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/executing-plans" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="performance-optimization" data-text="performance-optimization оптимизация производительности: измерить, найти узкое место, исправить, подтвердить цифрами. optimizes application performance across frontend, backend, queries, and databases. use when performance requirements exist, when you suspect performance regressions, when core web vitals or load times need improvement, when n+1 query patterns need fixing, or when profiling reveals bottlenecks. addyosmani/agent-skills">
+      <div class="top"><code class="name">performance-optimization</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Оптимизация производительности: измерить, найти узкое место, исправить, подтвердить цифрами.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill performance-optimization</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill performance-optimization">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/performance-optimization" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/performance-optimization" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="planning-and-task-breakdown" data-text="planning-and-task-breakdown планирование и декомпозиция задач на проверяемые шаги. breaks work into ordered tasks. use when you have a spec or clear requirements and need to break work into implementable tasks. use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible. addyosmani/agent-skills">
+      <div class="top"><code class="name">planning-and-task-breakdown</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Планирование и декомпозиция задач на проверяемые шаги.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill planning-and-task-breakdown</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill planning-and-task-breakdown">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/planning-and-task-breakdown" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/planning-and-task-breakdown" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="requesting-code-review" data-text="requesting-code-review запрос код-ревью: что проверять, в каком контексте, формат ответа. use when completing tasks, implementing major features, or before merging to verify work meets requirements obra/superpowers">
+      <div class="top"><code class="name">requesting-code-review</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Запрос код-ревью: что проверять, в каком контексте, формат ответа.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill requesting-code-review</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill requesting-code-review">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/requesting-code-review" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/requesting-code-review" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="security-and-hardening" data-text="security-and-hardening усиление безопасности: входные данные, секреты, зависимости, права, логирование. hardens code against vulnerabilities. use when auditing an input handler for vulnerabilities, when handling user input, authentication, data storage, or external integrations, or when checking a login flow is safe against the owasp top ten. use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services. use when auditing dependencies for known vulnerabilities, triaging package-manager audit findings, or assessing supply-chain risk in a new package. use when personal data or privacy compliance (gdpr, ccpa) is involved. addyosmani/agent-skills">
+      <div class="top"><code class="name">security-and-hardening</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">Усиление безопасности: входные данные, секреты, зависимости, права, логирование.</p>
+      <p class="meta">addyosmani/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill security-and-hardening</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill security-and-hardening">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/security-and-hardening" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/security-and-hardening" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="systematic-debugging" data-text="systematic-debugging системная отладка: сначала корневая причина, потом исправление; воспроизведение, гипотезы, проверка. use when encountering any bug, test failure, or unexpected behavior, before proposing fixes obra/superpowers">
+      <div class="top"><code class="name">systematic-debugging</code><span class="badge pass">✓ проверен · ⚠ 2</span></div>
+      <p class="desc">Системная отладка: сначала корневая причина, потом исправление; воспроизведение, гипотезы, проверка.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill systematic-debugging</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill systematic-debugging">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/systematic-debugging" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/systematic-debugging" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="test-driven-development" data-text="test-driven-development tdd: красный тест → минимальный код → рефакторинг; запрещает писать код без падающего теста. use when implementing any feature or bugfix, before writing implementation code obra/superpowers">
+      <div class="top"><code class="name">test-driven-development</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">TDD: красный тест → минимальный код → рефакторинг; запрещает писать код без падающего теста.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill test-driven-development</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill test-driven-development">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/test-driven-development" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/test-driven-development" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="using-git-worktrees" data-text="using-git-worktrees изолированная работа в git worktree: ветка на задачу, без конфликтов с основной копией. use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback obra/superpowers">
+      <div class="top"><code class="name">using-git-worktrees</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Изолированная работа в git worktree: ветка на задачу, без конфликтов с основной копией.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill using-git-worktrees</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill using-git-worktrees">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/using-git-worktrees" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/using-git-worktrees" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="vercel-composition-patterns" data-text="vercel-composition-patterns паттерны композиции react-компонентов: compound components, слоты, контекст без prop drilling. react composition patterns that scale. use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable apis. triggers on tasks involving compound components, render props, context providers, or component architecture. includes react 19 api changes. vercel-labs/agent-skills">
+      <div class="top"><code class="name">vercel-composition-patterns</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Паттерны композиции React-компонентов: compound components, слоты, контекст без prop drilling.</p>
+      <p class="meta">vercel-labs/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill vercel-composition-patterns</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill vercel-composition-patterns">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/vercel-composition-patterns" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/composition-patterns" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="vercel-react-best-practices" data-text="vercel-react-best-practices 70 правил производительности react и next.js от vercel: водопады запросов, бандл, рендеринг, кэш. react and next.js performance optimization guidelines from vercel engineering. this skill should be used when writing, reviewing, or refactoring react/next.js code to ensure optimal performance patterns. triggers on tasks involving react components, next.js pages, data fetching, bundle optimization, or performance improvements. vercel-labs/agent-skills">
+      <div class="top"><code class="name">vercel-react-best-practices</code><span class="badge pass">✓ проверен · ⚠ 1</span></div>
+      <p class="desc">70 правил производительности React и Next.js от Vercel: водопады запросов, бандл, рендеринг, кэш.</p>
+      <p class="meta">vercel-labs/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill vercel-react-best-practices</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill vercel-react-best-practices">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/vercel-react-best-practices" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/react-best-practices" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="verification-before-completion" data-text="verification-before-completion проверка перед словом «готово»: запустить тесты и показать вывод, а не утверждать. use when about to claim work is complete, fixed, or passing, before committing or creating prs - requires running verification commands and confirming output before making any success claims; evidence before assertions always obra/superpowers">
+      <div class="top"><code class="name">verification-before-completion</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Проверка перед словом «готово»: запустить тесты и показать вывод, а не утверждать.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill verification-before-completion</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill verification-before-completion">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/verification-before-completion" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/verification-before-completion" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="web-design-guidelines" data-text="web-design-guidelines ревью интерфейса по web interface guidelines: доступность, ux, формы, состояния. review ui code for web interface guidelines compliance. use when asked to &quot;review my ui&quot;, &quot;check accessibility&quot;, &quot;audit design&quot;, &quot;review ux&quot;, or &quot;check my site against best practices&quot;. vercel-labs/agent-skills">
+      <div class="top"><code class="name">web-design-guidelines</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Ревью интерфейса по Web Interface Guidelines: доступность, UX, формы, состояния.</p>
+      <p class="meta">vercel-labs/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill web-design-guidelines</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill web-design-guidelines">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/web-design-guidelines" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/web-design-guidelines" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="writing-guidelines" data-text="writing-guidelines правила письменной речи для документации и интерфейсов: ясность, краткость, структура. review docs/prose for writing guidelines compliance. use when asked to &quot;review my docs&quot;, &quot;check writing style&quot;, &quot;audit prose&quot;, &quot;review docs voice and tone&quot;, or &quot;check this page against the writing handbook&quot;. vercel-labs/agent-skills">
+      <div class="top"><code class="name">writing-guidelines</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">Правила письменной речи для документации и интерфейсов: ясность, краткость, структура.</p>
+      <p class="meta">vercel-labs/agent-skills · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill writing-guidelines</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill writing-guidelines">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/writing-guidelines" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/writing-guidelines" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+    <article class="card" data-name="writing-plans" data-text="writing-plans план реализации по шагам с проверяемыми результатами — для себя или другого агента. use when you have a spec or requirements for a multi-step task, before touching code obra/superpowers">
+      <div class="top"><code class="name">writing-plans</code><span class="badge pass">✓ проверен</span></div>
+      <p class="desc">План реализации по шагам с проверяемыми результатами — для себя или другого агента.</p>
+      <p class="meta">obra/superpowers · MIT · 2026-10-15</p>
+      <div class="cmd"><code>npx skills add tkbk-online/skills --skill writing-plans</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill writing-plans">копировать</button></div>
+      <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/universal/writing-plans" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/obra/superpowers/tree/bb92a7774141/skills/writing-plans" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
+    </article>
+  </div>
+</section>
+<section id="verified">
+  <h2>Проверено TKBK: что именно проверяем</h2>
+  <div class="verified"><ul>
+    <li><b>Загрузка в оболочку</b> — curl или wget в sh, bash, PowerShell.</li>
+    <li><b>Чужие ключи</b> — ~/.ssh, приватные ключи, .aws, .netrc, .npmrc, kube-конфиг, учётные данные Claude Code, отправка .env.</li>
+    <li><b>Дамп окружения</b> — printenv и env в канал или файл, сериализация process.env / os.environ.</li>
+    <li><b>Зашитые секреты</b> — ключи API, токены GitHub, Slack, Telegram, приватные ключи.</li>
+    <li><b>Обфускация</b> — base64-декодирование, eval, new Function, невидимые символы, байтовые массивы: в коде — ошибка, в тексте гайда — предупреждение.</li>
+    <li><b>Разрушительные команды</b> — rm -rf корня и дома, форматирование дисков, reverse shell, отключение защиты, запуск агента без проверки прав.</li>
+    <li><b>Инъекции в агента</b> — «ignore previous instructions», «do not tell the user», «без ведома пользователя», jailbreak-фразы.</li>
+    <li><b>Сетевые адреса</b> — каждый хост сверяется с allow-list: в скриптах чужой хост — ошибка, в документации — предупреждение; IP вместо домена — ошибка.</li>
+    <li><b>Структура и лицензии</b> — frontmatter name/description, только текстовые файлы и картинки, без бинарников и симлинков; LICENSE и ссылка на источник у каждого импортированного скила.</li>
+    <li><b>Принятые находки</b> — всё, что осталось осознанно, лежит в <code>tools/audit-accept.json</code> с причиной и показано в отчёте.</li>
+  </ul></div>
+</section>
+</main>
+<footer>MIT для скилов TKBK; импортированные скилы сохраняют лицензии источников (Apache-2.0, MIT). <a href="https://github.com/tkbk-online/skills">tkbk-online/skills</a> · <a href="https://tkbk.online">tkbk.online</a></footer>
+<script>
+for (const b of document.querySelectorAll('button[data-copy]')) b.addEventListener('click', async () => { try { await navigator.clipboard.writeText(b.dataset.copy); } catch {} const t = b.textContent; b.textContent = 'скопировано'; setTimeout(() => { b.textContent = t; }, 1500); });
+const q = document.querySelector('.search');
+q.addEventListener('input', () => { const v = q.value.trim().toLowerCase(); for (const c of document.querySelectorAll('.card')) c.hidden = !!v && !c.dataset.text.includes(v); for (const s of document.querySelectorAll('main section[id]')) { if (s.id === 'verified') continue; s.hidden = !!v && ![...s.querySelectorAll('.card')].some((c) => !c.hidden); } });
+</script>
+</body>
+</html>

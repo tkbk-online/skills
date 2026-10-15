@@ -1,0 +1,1260 @@
+{
+  "repo": "tkbk-online/skills",
+  "total": 59,
+  "categories": [
+    {
+      "id": "tkbk",
+      "title": "TKBK — российские сервисы",
+      "title_en": "TKBK — Russian services",
+      "text": "Свои скилы TKBK: маркетплейсы, CRM, Авито, ЮKassa, документы, подключение к шлюзу. Работают через MCP tkbk-online/tkbk-mcp.",
+      "skills": [
+        {
+          "name": "amocrm-followup",
+          "category": "tkbk",
+          "path": "skills/tkbk/amocrm-followup/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/amocrm-followup",
+          "description": "Дожим «зависших» сделок в amoCRM через MCP TKBK (amo_leads, amo_contacts, amo_add_note) и API v4 — находит сделки без движения N дней, пишет персональные follow-up сообщения по этапу воронки, добавляет примечания и ставит задачи менеджерам. Применяй, когда просят «кого дожать», «какие сделки зависли», «напиши follow-up клиентам», «поставь задачи по сделкам без активности».",
+          "description_ru": "Находит сделки amoCRM без движения N дней, пишет персональное сообщение под этап воронки, добавляет примечание и ставит задачу менеджеру.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill amocrm-followup",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "avito-replies",
+          "category": "tkbk",
+          "path": "skills/tkbk/avito-replies/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/avito-replies",
+          "description": "Ответы в чатах Авито через MCP TKBK (avito_chats, avito_messages, avito_items, avito_send_message) — разбирает непрочитанные сообщения, отвечает по шаблонам продавца о наличии, цене, адресе и торге, спам и агрессию отдаёт человеку. Применяй, когда просят «ответь в чатах Авито», «что пишут по объявлению», «разбери непрочитанные на Авито».",
+          "description_ru": "Разбирает непрочитанные чаты Авито по объявлениям, отвечает о наличии, цене, адресе и торге по правилам продавца; мошенников и споры отдаёт человеку.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill avito-replies",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "bitrix24-leads",
+          "category": "tkbk",
+          "path": "skills/tkbk/bitrix24-leads/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/bitrix24-leads",
+          "description": "Работа с лидами Битрикс24 через MCP TKBK (b24_leads, b24_deals, b24_add_lead, b24_add_task) и REST-вебхук — разбор новых лидов, поиск дублей, создание лида из письма или переписки, задача менеджеру, утренняя сводка. Применяй, когда просят «какие лиды пришли», «создай лид из этого письма», «поставь задачу менеджеру», «кто без ответа в CRM».",
+          "description_ru": "Сводка новых лидов Битрикс24, поиск дублей по телефону и почте, лид из письма или переписки, задача менеджеру со сроком.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill bitrix24-leads",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "ozon-questions",
+          "category": "tkbk",
+          "path": "skills/tkbk/ozon-questions/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/ozon-questions",
+          "description": "Ответы на вопросы покупателей о товарах Ozon через Seller API (/v1/question/list → черновики → подтверждение → /v1/question/answer/create) скриптом scripts/ozon-questions.mjs; остатки и товары — через MCP TKBK (ozon_products, ozon_stocks). Применяй, когда просят «ответить на вопросы на Ozon», «что спрашивают покупатели», «закрыть новые вопросы».",
+          "description_ru": "Новые вопросы в карточках Ozon через Seller API, ответы с опорой на остатки и характеристики, публикация после подтверждения; скрипт в комплекте.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill ozon-questions",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "ru-legal-docs",
+          "category": "tkbk",
+          "path": "skills/tkbk/ru-legal-docs/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/ru-legal-docs",
+          "description": "Договор и публичная оферта по шаблонам РФ — договор возмездного оказания услуг (гл. 39 ГК РФ), публичная оферта для сайта/сервиса (ст. 435–438 ГК РФ), реквизиты сторон (ИНН, ОГРН/ОГРНИП, КПП, банк), НДС и УСН, 152-ФЗ, Закон о защите прав потребителей; шаблоны в templates/. Применяй, когда просят «составь договор», «напиши оферту для сайта», «проверь договор подрядчика», «нужны условия для клиентов».",
+          "description_ru": "Договор возмездного оказания услуг и публичная оферта по шаблонам РФ с реквизитами, НДС/УСН, 152-ФЗ и ЗоЗПП; чек-лист проверки чужого договора.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill ru-legal-docs",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "tkbk-setup",
+          "category": "tkbk",
+          "path": "skills/tkbk/tkbk-setup/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/tkbk-setup",
+          "description": "Подключение любого инструмента к шлюзу TKBK (api.tkbk.online, один ключ cr_… для Claude, GPT, DeepSeek, GLM, Grok) — Claude Code, Codex CLI, Cursor, Cline, Kilo Code, Zed, JetBrains/Continue, Aider, n8n, Dify, Open WebUI, OpenCode, Chatbox, SDK Anthropic/OpenAI, curl; выбор base URL по формату API, проверка ключа скриптом scripts/tkbk-check.mjs, разбор ошибок 401/402/404/429. Применяй, когда просят «подключи TKBK», «настрой Claude Code / Cursor / Codex на TKBK», «какой base URL», «не работает ключ cr_».",
+          "description_ru": "Base URL и ключ TKBK для Claude Code, Codex, Cursor, Cline, Zed, n8n, Dify, SDK и curl; проверка ключа скриптом; разбор ошибок 401, 402, 404, 429.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill tkbk-setup",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "tz-from-chat",
+          "category": "tkbk",
+          "path": "skills/tkbk/tz-from-chat/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/tz-from-chat",
+          "description": "Техническое задание из переписки — превращает чат с заказчиком, письма, голосовые расшифровки и заметки со встречи в структурированное ТЗ (цели, роли, сценарии, требования MoSCoW, интеграции, данные, критерии приёмки, открытые вопросы, оценка). Применяй, когда просят «сделай ТЗ из переписки», «оформи требования», «что клиент хочет — по пунктам», «составь задание разработчику».",
+          "description_ru": "Превращает переписку с заказчиком в техническое задание: цели, роли, сценарии, требования MoSCoW, интеграции, критерии приёмки, открытые вопросы.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill tz-from-chat",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "wb-reviews",
+          "category": "tkbk",
+          "path": "skills/tkbk/wb-reviews/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/wb-reviews",
+          "description": "Ответы на отзывы покупателей Wildberries через MCP-сервер TKBK (wb_feedbacks → черновики → подтверждение → wb_answer_feedback). Применяй, когда просят «ответить на отзывы WB», «разобрать негатив на Wildberries», «что пишут покупатели», «отработать отзывы с 1–3 звёздами».",
+          "description_ru": "Забирает отзывы Wildberries без ответа, группирует по оценкам и товарам, пишет ответы по правилам WB и публикует только утверждённые.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill wb-reviews",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "yandex-market-stock",
+          "category": "tkbk",
+          "path": "skills/tkbk/yandex-market-stock/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/yandex-market-stock",
+          "description": "Остатки и алерты по товарам Яндекс Маркета — магазины и заказы через MCP TKBK (ym_campaigns, ym_orders, ym_offers), остатки и оборачиваемость через API Маркета скриптом scripts/ym-stocks.mjs; считает дни запаса и список «пора дозаказать». Применяй, когда просят «проверь остатки на Маркете», «что заканчивается», «алерт по остаткам», «сколько дней хватит товара».",
+          "description_ru": "Остатки Яндекс Маркета по складам и оборачиваемость, продажи за 14 дней, дни запаса по каждому SKU и список «пора дозаказать».",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill yandex-market-stock",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "yookassa-sbp",
+          "category": "tkbk",
+          "path": "skills/tkbk/yookassa-sbp/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/tkbk/yookassa-sbp",
+          "description": "Интеграция приёма оплаты ЮKassa и СБП в код — создание платежа (POST /v3/payments, payment_method_data sbp, Idempotence-Key), страница оплаты, вебхук payment.succeeded с проверкой IP и статуса, чек 54-ФЗ, возвраты, тестовый магазин; скрипт scripts/yookassa-sbp.mjs для проверки. Применяй, когда просят «подключить ЮKassa», «оплату по СБП», «принять платёж в приложении / боте / на сайте», «вебхук оплаты».",
+          "description_ru": "Оплата ЮKassa и СБП в коде: создание платежа, страница оплаты, вебхук с проверкой IP и статуса, чек 54-ФЗ, возвраты, тестовый магазин; скрипт для проверки.",
+          "source": "https://github.com/tkbk-online/skills",
+          "upstream": "tkbk-online/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill yookassa-sbp",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "title": "Claude",
+      "title_en": "Claude",
+      "text": "Официальные скилы Anthropic для Claude и Claude Code.",
+      "skills": [
+        {
+          "name": "frontend-design",
+          "category": "claude",
+          "path": "skills/claude/frontend-design/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/frontend-design",
+          "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+          "description_ru": "Интерфейсы с характером: дизайн-направление, типографика, цвет, движение — без «шаблонного вида ИИ».",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/frontend-design",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill frontend-design",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "internal-comms",
+          "category": "claude",
+          "path": "skills/claude/internal-comms/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/internal-comms",
+          "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+          "description_ru": "Внутренние коммуникации компании: статусы, отчёты, объявления, FAQ, записки руководству.",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/internal-comms",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill internal-comms",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "mcp-builder",
+          "category": "claude",
+          "path": "skills/claude/mcp-builder/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/mcp-builder",
+          "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+          "description_ru": "Создание MCP-серверов: проектирование инструментов, SDK на TypeScript и Python, тестирование.",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/mcp-builder",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill mcp-builder",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "skill-creator",
+          "category": "claude",
+          "path": "skills/claude/skill-creator/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/skill-creator",
+          "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+          "description_ru": "Создание и улучшение скилов: структура SKILL.md, проверка срабатывания, оценка качества.",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/skill-creator",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill skill-creator",
+          "audit": {
+            "errors": 0,
+            "warnings": 3,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "theme-factory",
+          "category": "claude",
+          "path": "skills/claude/theme-factory/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/theme-factory",
+          "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+          "description_ru": "Готовые темы оформления (палитры и шрифты) для презентаций, документов и веб-артефактов.",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/theme-factory",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill theme-factory",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "webapp-testing",
+          "category": "claude",
+          "path": "skills/claude/webapp-testing/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/claude/webapp-testing",
+          "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+          "description_ru": "Тестирование веб-приложений через Playwright: запуск, сценарии, скриншоты, логи браузера.",
+          "source": "https://github.com/anthropics/skills/tree/dbd4588f9e10/skills/webapp-testing",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill webapp-testing",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "claude-api",
+          "category": "claude",
+          "bridge": true,
+          "url": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+          "description_ru": "Справочник по Claude API и SDK (2 МБ, 90 файлов): Messages API, инструменты, стриминг, оценки. Слишком велик для копии — ставится из репозитория Anthropic; формат тот же через шлюз TKBK.",
+          "source": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+          "upstream": "anthropics/skills",
+          "license": "Apache-2.0",
+          "install": "npx skills add anthropics/skills --skill claude-api"
+        },
+        {
+          "name": "docx",
+          "category": "claude",
+          "bridge": true,
+          "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+          "description_ru": "Документы Word: создание, правка, отслеживание изменений. Лицензия не разрешает копировать — ставится из репозитория Anthropic.",
+          "source": "https://github.com/anthropics/skills/tree/main/skills/docx",
+          "upstream": "anthropics/skills",
+          "license": "Proprietary (Anthropic)",
+          "install": "npx skills add anthropics/skills --skill docx"
+        },
+        {
+          "name": "pdf",
+          "category": "claude",
+          "bridge": true,
+          "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+          "description_ru": "PDF: чтение, объединение, формы, OCR. Ставится из репозитория Anthropic.",
+          "source": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+          "upstream": "anthropics/skills",
+          "license": "Proprietary (Anthropic)",
+          "install": "npx skills add anthropics/skills --skill pdf"
+        },
+        {
+          "name": "pptx",
+          "category": "claude",
+          "bridge": true,
+          "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+          "description_ru": "Презентации PowerPoint: создание и правка по шаблону. Ставится из репозитория Anthropic.",
+          "source": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+          "upstream": "anthropics/skills",
+          "license": "Proprietary (Anthropic)",
+          "install": "npx skills add anthropics/skills --skill pptx"
+        },
+        {
+          "name": "xlsx",
+          "category": "claude",
+          "bridge": true,
+          "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+          "description_ru": "Таблицы Excel: формулы, форматирование, анализ. Ставится из репозитория Anthropic.",
+          "source": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+          "upstream": "anthropics/skills",
+          "license": "Proprietary (Anthropic)",
+          "install": "npx skills add anthropics/skills --skill xlsx"
+        }
+      ]
+    },
+    {
+      "id": "gpt-codex",
+      "title": "GPT / Codex",
+      "title_en": "GPT / Codex",
+      "text": "Каталог скилов OpenAI для Codex CLI; работают и в других агентах.",
+      "skills": [
+        {
+          "name": "cli-creator",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/cli-creator/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/cli-creator",
+          "description": "Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
+          "description_ru": "Проектирование и создание CLI-утилит: команды, флаги, вывод, тесты.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/cli-creator",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill cli-creator",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "define-goal",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/define-goal/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/define-goal",
+          "description": "Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
+          "description_ru": "Формулировка цели задачи до начала работы: критерии готовности, ограничения, проверка.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/define-goal",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill define-goal",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "gh-address-comments",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/gh-address-comments/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/gh-address-comments",
+          "description": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
+          "description_ru": "Ответы на замечания ревьюеров в pull request и правки по ним.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/gh-address-comments",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill gh-address-comments",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "gh-fix-ci",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/gh-fix-ci/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/gh-fix-ci",
+          "description": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL.",
+          "description_ru": "Починка упавшего CI в GitHub Actions: разбор логов, причина, точечный фикс.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/gh-fix-ci",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill gh-fix-ci",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "jupyter-notebook",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/jupyter-notebook/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/jupyter-notebook",
+          "description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.",
+          "description_ru": "Работа с Jupyter-ноутбуками: запуск ячеек, правка, анализ данных.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/jupyter-notebook",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill jupyter-notebook",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "linear",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/linear/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/linear",
+          "description": "Manage issues, projects & team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear.",
+          "description_ru": "Задачи Linear: создание, статусы, связь с кодом.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/linear",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill linear",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "migrate-to-codex",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/migrate-to-codex/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/migrate-to-codex",
+          "description": "Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files.",
+          "description_ru": "Перенос конфигурации и правил из других агентов в Codex CLI.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/migrate-to-codex",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill migrate-to-codex",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "openai-docs",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/openai-docs/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/openai-docs",
+          "description": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+          "description_ru": "Поиск по документации OpenAI API (Responses, Chat Completions) — формат совместим со шлюзом TKBK.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/openai-docs",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill openai-docs",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "playwright",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/playwright/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/playwright",
+          "description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
+          "description_ru": "Автоматизация браузера через Playwright: тесты, обход страниц, скриншоты.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/playwright",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill playwright",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "security-best-practices",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/security-best-practices/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-best-practices",
+          "description": "Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.",
+          "description_ru": "Проверка безопасности кода по языку и фреймворку: уязвимости, отчёт, исправления.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-best-practices",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill security-best-practices",
+          "audit": {
+            "errors": 0,
+            "warnings": 24,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "security-ownership-map",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/security-ownership-map/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-ownership-map",
+          "description": "Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. Trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, CODEOWNERS reality checks for risk, sensitive hotspots, or ownership clusters). Do not trigger for general maintainer lists or non-security ownership questions.",
+          "description_ru": "Карта ответственности за безопасность по частям репозитория.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-ownership-map",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill security-ownership-map",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "security-threat-model",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/security-threat-model/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/security-threat-model",
+          "description": "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling. Do not trigger for general architecture summaries, code review, or non-security design work.",
+          "description_ru": "Модель угроз для системы или фичи: активы, границы доверия, риски, меры.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/security-threat-model",
+          "upstream": "openai/skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill security-threat-model",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "vercel-deploy",
+          "category": "gpt-codex",
+          "path": "skills/gpt-codex/vercel-deploy/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/gpt-codex/vercel-deploy",
+          "description": "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
+          "description_ru": "Деплой проекта на Vercel из агента.",
+          "source": "https://github.com/openai/skills/tree/49f948faa925/skills/.curated/vercel-deploy",
+          "upstream": "openai/skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill vercel-deploy",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "title": "DeepSeek",
+      "title_en": "DeepSeek",
+      "text": "Переносимые скилы из DeepSeek Harness (dsh).",
+      "skills": [
+        {
+          "name": "dsh-error-handling",
+          "category": "deepseek",
+          "path": "skills/deepseek/dsh-error-handling/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-error-handling",
+          "description": "Apply error-handling principles when designing or reviewing failures, recovery, retries, background tasks, and user-visible error reports.",
+          "description_ru": "Принципы обработки ошибок: классификация сбоев, повторы, фоновые задачи, понятные сообщения пользователю.",
+          "source": "https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-error-handling",
+          "upstream": "deepseek-ai/deepseek-harness",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill dsh-error-handling",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "dsh-find-simplifications",
+          "category": "deepseek",
+          "path": "skills/deepseek/dsh-find-simplifications/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-find-simplifications",
+          "description": "Find evidence-backed simplifications in DeepSeek Harness code, APIs, configuration, tests, and prose; write or consolidate proposals, identify small inline cleanups, or assess simplifications from another branch. Use for removing dead, duplicated, speculative, or unnecessarily maintained behavior and infrastructure.",
+          "description_ru": "Поиск обоснованных упрощений: мёртвый и дублирующий код, лишние абстракции, конфигурация, тесты.",
+          "source": "https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-find-simplifications",
+          "upstream": "deepseek-ai/deepseek-harness",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill dsh-find-simplifications",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "dsh-trim-cot-leakage",
+          "category": "deepseek",
+          "path": "skills/deepseek/dsh-trim-cot-leakage/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/deepseek/dsh-trim-cot-leakage",
+          "description": "Use when auditing or fixing prose that reads like a leaked reasoning transcript — dead design-session citations such as (decision N), audit item codes, or §N of uncommitted drafts; change narration such as \"used to\", \"no longer\", \"this cut\"; stack or review vantage (\"a later PR in this stack\", \"rejected in review\"); reviewer-addressed justifications; control-flow narration; or hedged planning residue in comments, JSDoc, docs, or Agent Notes.",
+          "description_ru": "Чистка текстов от «утечки рассуждений»: ссылки на черновики, историю решений, «раньше было» — в документации и комментариях.",
+          "source": "https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/dsh-trim-cot-leakage",
+          "upstream": "deepseek-ai/deepseek-harness",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill dsh-trim-cot-leakage",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "record-browser-gif",
+          "category": "deepseek",
+          "path": "skills/deepseek/record-browser-gif/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/deepseek/record-browser-gif",
+          "description": "Record browser or Web UI interaction demos as optimized GIFs using the available browser-control workflow, optional Playwright Videos for higher capture frame rates, and deterministic encoding, then attach the GIF to a pull request with `gh --attach`, falling back to a dedicated assets branch where attach cannot apply. Use when asked to make, record, or generate a GIF that demonstrates a browser workflow, and for every pull request that changes product-user-visible GUI behavior, which MUST include a GIF recorded from the pull request's real server and model flow.",
+          "description_ru": "Запись GIF-демо интерфейса через браузер или Playwright и прикрепление к pull request.",
+          "source": "https://github.com/deepseek-ai/deepseek-harness/tree/86a402200d95/.agents/skills/record-browser-gif",
+          "upstream": "deepseek-ai/deepseek-harness",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill record-browser-gif",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "skills",
+          "category": "deepseek",
+          "bridge": true,
+          "url": "https://github.com/deepseek-ai/deepseek-harness/tree/main/.agents/skills",
+          "description_ru": "Остальные скилы DeepSeek Harness (ревью, CI, UI, документация) — привязаны к их репозиторию, ставятся оттуда.",
+          "source": "https://github.com/deepseek-ai/deepseek-harness/tree/main/.agents/skills",
+          "upstream": "deepseek-ai/deepseek-harness",
+          "license": "MIT",
+          "install": ""
+        }
+      ]
+    },
+    {
+      "id": "glm",
+      "title": "GLM",
+      "title_en": "GLM",
+      "text": "Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY).",
+      "skills": [
+        {
+          "name": "glm-master-skill",
+          "category": "glm",
+          "path": "skills/glm/glm-master-skill/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glm-master-skill",
+          "description": "Documentation-only master skill for GLM ecosystem discovery and installation.\nThis skill does not execute scripts or subprocess commands.\nIt provides a curated list of official GLM skills, install methods, and source links.",
+          "description_ru": "Обзор официальных скилов GLM и способы установки (только документация).",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glm-master-skill",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glm-master-skill",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmocr-sdk",
+          "category": "glm",
+          "path": "skills/glm/glmocr-sdk/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmocr-sdk",
+          "description": "Trigger when: (1) User wants to extract text, tables, formulas, or structured data from images/PDFs/scanned documents, (2) User mentions \"OCR\", \"文字识别\", \"文档解析\", (3) User has a document (screenshot, scanned page, invoice, paper, whiteboard photo) and needs its content in structured form, (4) User asks to parse, digitize, or extract content from a visual document.\n\nInvokes the GLM-OCR SDK (pip install glmocr) to parse documents via Zhipu's cloud API. No GPU required. Returns structured JSON (regions with labels + bounding boxes) and Markdown. Agent can operate entirely via CLI — no YAML files needed.\n\nNOT for: real-time camera feeds, audio transcription, or non-document images (photos, illustrations).",
+          "description_ru": "OCR документов через GLM-OCR SDK: текст, таблицы, формулы.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmocr-sdk",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmocr-sdk",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmv-doc-based-writing",
+          "category": "glm",
+          "path": "skills/glm/glmv-doc-based-writing/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-doc-based-writing",
+          "description": "Write a textual content based on given document(s) and requirements, using ZhiPu GLM-V multimodal model. Read and comprehend one or multiple documents (PDF/DOCX), write a content in Markdown format according to the specified requirements. Use when the user wants to draft a paper/article/essay/report/review/post/brief/proposal/plan, etc.",
+          "description_ru": "Написание текстов на основе загруженных документов с сохранением фактов и структуры.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-doc-based-writing",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmv-doc-based-writing",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmv-prd-to-app",
+          "category": "glm",
+          "path": "skills/glm/glmv-prd-to-app/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-prd-to-app",
+          "description": "Build a complete, production-ready full-stack web application from PRD documents, prototype images, and resource files. Handles the entire pipeline: system design, database schema, seed data, backend API, frontend UI, visual verification against prototypes, and deployment script generation.  Use this skill whenever the user: - Provides a PRD (product requirement document) and wants a working app built - Says things like \"根据PRD开发\", \"build from PRD\", \"implement this product\", \"把需求文档做成应用\", \"develop this app from requirements\" - Has prototype images + requirements and wants full-stack implementation - Wants to turn product specifications into a running web application - Mentions building an app from wireframes/mockups combined with a requirements doc  Trigger this skill even if the user just says \"帮我开发\" or \"build this\" with PRD materials present in the working directory.",
+          "description_ru": "Полноценное веб-приложение из PRD и прототипов: схема БД, API, фронтенд, проверка по макетам, деплой-скрипт.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prd-to-app",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmv-prd-to-app",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmv-prompt-gen",
+          "category": "glm",
+          "path": "skills/glm/glmv-prompt-gen/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-prompt-gen",
+          "description": "Analyze images/videos and generate professional prompts for text-to-image and text-to-video AI tools (Midjourney, Stable Diffusion, DALL-E, Sora, Runway, Kling, Pika). Use when the user wants to generate prompts from reference images/videos, create AI art prompts, or get prompt engineering suggestions from visual content.",
+          "description_ru": "Генерация промптов для изображений и видео по описанию или референсу.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prompt-gen",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmv-prompt-gen",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmv-resume-screen",
+          "category": "glm",
+          "path": "skills/glm/glmv-resume-screen/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-resume-screen",
+          "description": "Screen and evaluate resumes against criteria using ZhiPu GLM-V multimodal model. Reads multiple resume files (PDF/DOCX/TXT), compares against user-defined screening criteria, and outputs a Markdown table with pass/fail analysis. Use when the user wants to filter resumes, compare candidates, or batch-evaluate job applications.",
+          "description_ru": "Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-resume-screen",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmv-resume-screen",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "glmv-web-replication",
+          "category": "glm",
+          "path": "skills/glm/glmv-web-replication/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-web-replication",
+          "description": "Frontend visual replication skill. Explores a target website’s publicly visible pages via Playwright MCP or agent-browser, captures screenshots and layout information, then generates a static or client-side frontend replica that approximates the original’s visual appearance and page structure. This skill replicates FRONTEND PRESENTATION ONLY — it does not reproduce backend logic, server-side behavior, databases, or any non-public content. The user is responsible for ensuring they have proper authorization (ownership, license, or explicit permission) before replicating any website.  ⚠️ Authorization gate: Before starting, the agent MUST confirm with the user that they have the legal right to replicate the target site. If the user cannot confirm, the skill MUST refuse to proceed.",
+          "description_ru": "Воспроизведение веб-страницы по скриншоту: вёрстка и стили.",
+          "source": "https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-web-replication",
+          "upstream": "zai-org/GLM-skills",
+          "license": "Apache-2.0",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill glmv-web-replication",
+          "audit": {
+            "errors": 0,
+            "warnings": 6,
+            "accepted": 0,
+            "status": "pass"
+          }
+        }
+      ]
+    },
+    {
+      "id": "grok",
+      "title": "Grok",
+      "title_en": "Grok",
+      "text": "У xAI пока нет каталога SKILL.md — ссылки на официальные инструменты.",
+      "skills": [
+        {
+          "name": "grok-build",
+          "category": "grok",
+          "bridge": true,
+          "url": "https://github.com/xai-org/grok-build-plugin-cc/tree/main/plugins/grok-build",
+          "description_ru": "Плагин Claude Code от xAI: делегирование ревью и «спасательных» задач Grok Build CLI (формат плагина, не SKILL.md).",
+          "source": "https://github.com/xai-org/grok-build-plugin-cc/tree/main/plugins/grok-build",
+          "upstream": "xai-org/grok-build-plugin-cc",
+          "license": "Apache-2.0",
+          "install": ""
+        }
+      ]
+    },
+    {
+      "id": "universal",
+      "title": "Универсальные",
+      "title_en": "Universal",
+      "text": "Инженерные практики для любой модели: ревью, отладка, TDD, планирование, React и дизайн.",
+      "skills": [
+        {
+          "name": "api-and-interface-design",
+          "category": "universal",
+          "path": "skills/universal/api-and-interface-design/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/api-and-interface-design",
+          "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+          "description_ru": "Проектирование API и интерфейсов модулей: контракты, версии, ошибки, обратная совместимость.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/api-and-interface-design",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill api-and-interface-design",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "brainstorming",
+          "category": "universal",
+          "path": "skills/universal/brainstorming/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/brainstorming",
+          "description": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).",
+          "description_ru": "Брейншторм перед реализацией: вопросы заказчику, варианты, выбор подхода до написания кода.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/brainstorming",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill brainstorming",
+          "audit": {
+            "errors": 0,
+            "warnings": 2,
+            "accepted": 1,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "code-review-and-quality",
+          "category": "universal",
+          "path": "skills/universal/code-review-and-quality/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/code-review-and-quality",
+          "description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch. Use when asked to review a diff or a pull request, even when the diff is pasted inline.",
+          "description_ru": "Код-ревью по пяти осям: корректность, читаемость, архитектура, безопасность, производительность.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/code-review-and-quality",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill code-review-and-quality",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "debugging-and-error-recovery",
+          "category": "universal",
+          "path": "skills/universal/debugging-and-error-recovery/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/debugging-and-error-recovery",
+          "description": "Guides systematic root-cause debugging. Use when tests fail, builds break, something that worked yesterday broke, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need to figure out what broke and why — a systematic approach to finding and fixing the root cause rather than guessing.",
+          "description_ru": "Отладка и восстановление после ошибок: воспроизведение, изоляция, защита от повторения.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/debugging-and-error-recovery",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill debugging-and-error-recovery",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "documentation-and-adrs",
+          "category": "universal",
+          "path": "skills/universal/documentation-and-adrs/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/documentation-and-adrs",
+          "description": "Records decisions and documentation. Use when you need to document an architecture decision (ADR) or the reasoning behind a design choice, when changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+          "description_ru": "Документация и ADR: фиксировать решения, README, которые читают.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/documentation-and-adrs",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill documentation-and-adrs",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "executing-plans",
+          "category": "universal",
+          "path": "skills/universal/executing-plans/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/executing-plans",
+          "description": "Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available",
+          "description_ru": "Выполнение готового плана задача за задачей с фиксацией результата и ревью.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/executing-plans",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill executing-plans",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "performance-optimization",
+          "category": "universal",
+          "path": "skills/universal/performance-optimization/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/performance-optimization",
+          "description": "Optimizes application performance across frontend, backend, queries, and databases. Use when performance requirements exist, when you suspect performance regressions, when Core Web Vitals or load times need improvement, when N+1 query patterns need fixing, or when profiling reveals bottlenecks.",
+          "description_ru": "Оптимизация производительности: измерить, найти узкое место, исправить, подтвердить цифрами.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/performance-optimization",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill performance-optimization",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "planning-and-task-breakdown",
+          "category": "universal",
+          "path": "skills/universal/planning-and-task-breakdown/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/planning-and-task-breakdown",
+          "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.",
+          "description_ru": "Планирование и декомпозиция задач на проверяемые шаги.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/planning-and-task-breakdown",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill planning-and-task-breakdown",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "requesting-code-review",
+          "category": "universal",
+          "path": "skills/universal/requesting-code-review/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/requesting-code-review",
+          "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+          "description_ru": "Запрос код-ревью: что проверять, в каком контексте, формат ответа.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/requesting-code-review",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill requesting-code-review",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "security-and-hardening",
+          "category": "universal",
+          "path": "skills/universal/security-and-hardening/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/security-and-hardening",
+          "description": "Hardens code against vulnerabilities. Use when auditing an input handler for vulnerabilities, when handling user input, authentication, data storage, or external integrations, or when checking a login flow is safe against the OWASP Top Ten. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services. Use when auditing dependencies for known vulnerabilities, triaging package-manager audit findings, or assessing supply-chain risk in a new package. Use when personal data or privacy compliance (GDPR, CCPA) is involved.",
+          "description_ru": "Усиление безопасности: входные данные, секреты, зависимости, права, логирование.",
+          "source": "https://github.com/addyosmani/agent-skills/tree/aeac41d4d005/skills/security-and-hardening",
+          "upstream": "addyosmani/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill security-and-hardening",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "systematic-debugging",
+          "category": "universal",
+          "path": "skills/universal/systematic-debugging/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/systematic-debugging",
+          "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+          "description_ru": "Системная отладка: сначала корневая причина, потом исправление; воспроизведение, гипотезы, проверка.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/systematic-debugging",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill systematic-debugging",
+          "audit": {
+            "errors": 0,
+            "warnings": 2,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "test-driven-development",
+          "category": "universal",
+          "path": "skills/universal/test-driven-development/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/test-driven-development",
+          "description": "Use when implementing any feature or bugfix, before writing implementation code",
+          "description_ru": "TDD: красный тест → минимальный код → рефакторинг; запрещает писать код без падающего теста.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/test-driven-development",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill test-driven-development",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "using-git-worktrees",
+          "category": "universal",
+          "path": "skills/universal/using-git-worktrees/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/using-git-worktrees",
+          "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+          "description_ru": "Изолированная работа в git worktree: ветка на задачу, без конфликтов с основной копией.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/using-git-worktrees",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill using-git-worktrees",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "vercel-composition-patterns",
+          "category": "universal",
+          "path": "skills/universal/vercel-composition-patterns/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/vercel-composition-patterns",
+          "description": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.",
+          "description_ru": "Паттерны композиции React-компонентов: compound components, слоты, контекст без prop drilling.",
+          "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/composition-patterns",
+          "upstream": "vercel-labs/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill vercel-composition-patterns",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "vercel-react-best-practices",
+          "category": "universal",
+          "path": "skills/universal/vercel-react-best-practices/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/vercel-react-best-practices",
+          "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+          "description_ru": "70 правил производительности React и Next.js от Vercel: водопады запросов, бандл, рендеринг, кэш.",
+          "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/react-best-practices",
+          "upstream": "vercel-labs/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill vercel-react-best-practices",
+          "audit": {
+            "errors": 0,
+            "warnings": 1,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "verification-before-completion",
+          "category": "universal",
+          "path": "skills/universal/verification-before-completion/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/verification-before-completion",
+          "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+          "description_ru": "Проверка перед словом «готово»: запустить тесты и показать вывод, а не утверждать.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/verification-before-completion",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill verification-before-completion",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "web-design-guidelines",
+          "category": "universal",
+          "path": "skills/universal/web-design-guidelines/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/web-design-guidelines",
+          "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+          "description_ru": "Ревью интерфейса по Web Interface Guidelines: доступность, UX, формы, состояния.",
+          "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/web-design-guidelines",
+          "upstream": "vercel-labs/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill web-design-guidelines",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "writing-guidelines",
+          "category": "universal",
+          "path": "skills/universal/writing-guidelines/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/writing-guidelines",
+          "description": "Review docs/prose for Writing Guidelines compliance. Use when asked to \"review my docs\", \"check writing style\", \"audit prose\", \"review docs voice and tone\", or \"check this page against the writing handbook\".",
+          "description_ru": "Правила письменной речи для документации и интерфейсов: ясность, краткость, структура.",
+          "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4/skills/writing-guidelines",
+          "upstream": "vercel-labs/agent-skills",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill writing-guidelines",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        },
+        {
+          "name": "writing-plans",
+          "category": "universal",
+          "path": "skills/universal/writing-plans/SKILL.md",
+          "url": "https://github.com/tkbk-online/skills/tree/main/skills/universal/writing-plans",
+          "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+          "description_ru": "План реализации по шагам с проверяемыми результатами — для себя или другого агента.",
+          "source": "https://github.com/obra/superpowers/tree/bb92a7774141/skills/writing-plans",
+          "upstream": "obra/superpowers",
+          "license": "MIT",
+          "checked": "2026-10-15",
+          "install": "npx skills add tkbk-online/skills --skill writing-plans",
+          "audit": {
+            "errors": 0,
+            "warnings": 0,
+            "accepted": 0,
+            "status": "pass"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$comment": "Reviewed findings that stay in the catalog on purpose. Each entry turns one error into an 'accepted' line in the report — never hidden, always with the reason.",
+  "accepted": [
+    {
+      "skill": "skill-creator",
+      "file": "eval-viewer/viewer.html",
+      "rule": "obfuscation",
+      "reason": "the local eval viewer decodes a base64 data blob the user pasted into the page; no network, no secrets"
+    },
+    {
+      "skill": "brainstorming",
+      "file": "scripts/server.cjs",
+      "rule": "external-host",
+      "reason": "the local brainstorming page loads the Superpowers logo image from primeradiant.com — a third-party image request the upstream calls telemetry; set SUPERPOWERS_DISABLE_TELEMETRY=1 to keep it local"
+    }
+  ]
+}

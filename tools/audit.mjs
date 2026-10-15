@@ -21,13 +21,20 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const ALLOWLIST_PATH = join(HERE, 'allowlist.json');
 
-const TEXT_EXT = new Set(['.md', '.mjs', '.js', '.cjs', '.ts', '.sh', '.py', '.ps1', '.json', '.txt', '.yml', '.yaml', '.toml', '.csv', '.env.example']);
+const TEXT_EXT = new Set(['.md', '.mdx', '.mjs', '.js', '.cjs', '.ts', '.tsx', '.jsx', '.sh', '.py', '.ps1', '.json', '.txt', '.yml', '.yaml', '.toml', '.csv', '.env.example', '.html', '.css', '.xml', '.svg', '.sql', '.rb', '.go', '.rs', '.java', '.kt', '.swift', '.cs', '.tmpl', '.tpl', '.hbs', '.j2', '.ini', '.cfg', '.conf', '.lock', '.ipynb', '.dot', '.xsd', '.gitignore', '.editorconfig']);
+/** Image, font and document assets are allowed but not scanned (size-limited); archives, executables and everything else are errors. */
+const ASSET_EXT = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.woff', '.woff2', '.ttf', '.otf', '.pdf']);
+/** License texts name apache.org and opensource.org over http://; they carry no instructions for the agent. */
+const LICENSE_FILE = /^(LICENSE|LICENCE|NOTICE|COPYING)(\.|$)/i;
+/** Extension-less text files common in skill folders. */
+const BARE_TEXT_FILE = /^(README|AGENTS|CLAUDE|Makefile|Dockerfile|task-start|task-done|task-brief|sdd-workspace|review-package)$/i;
 const MAX_FILE_BYTES = 256 * 1024;
 const MAX_SKILL_MD_BYTES = 64 * 1024;
 const MAX_DESCRIPTION = 1024;
 const NAME_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
-const TLD_RE = '(?:ru|com|net|org|io|dev|app|su|xyz|top|cc|me|info|co|ai|sh|gg|one|online|site|store|tech|cloud|link|click|ly|to|tk|ml|ga|cf|рф)';
+/** TLDs a bare (scheme-less) host is recognised by; code identifiers like `page.click` or `args.top` must not match. */
+const TLD_RE = '(?:ru|com|net|org|io|dev|app|ai|su|xyz|online|site|store|tech|cloud|cn|рф)';
 
 /** [id, severity, regex, message]. Regexes run per line; `i` where case does not matter. */
 const RULES = [
@@ -86,8 +93,10 @@ const RULES = [
   ['persistence', 'warn', /(>>|tee\s+-a)\s*[^\n]*[\\/]\.(bashrc|zshrc|profile|bash_profile|zprofile)\b/, 'writes to a shell profile'],
   // 7. prompt injection against the agent
   ['prompt-injection', 'error', /\bignore\s+(all\s+|any\s+)?(previous|prior|above|earlier)\s+(instructions|rules|prompts)/i, 'tells the agent to ignore its instructions'],
-  ['prompt-injection', 'error', /\b(do\s+not|don'?t|never)\s+(tell|inform|show|mention|reveal|disclose)\s+(this\s+|it\s+|anything\s+)?(to\s+)?the\s+user/i, 'tells the agent to hide something from the user'],
-  ['prompt-injection', 'error', /\b(without|w\/o)\s+(the\s+)?user'?s?\s+(knowledge|consent|confirmation|noticing)/i, 'tells the agent to act without the user'],
+  ['prompt-injection', 'error', /\b(do\s+not|don'?t|never)\s+(tell|inform|show|mention|reveal|disclose)\s+(this\s+|it\s+|anything\s+)?(to\s+)?the\s+user(?!\s+(they|that|to|what|how|which|where|when|about\s+(the\s+)?(need|option))\b)/i, 'tells the agent to hide something from the user'],
+  // "act without the user's consent" is an injection; "never act without user confirmation" is the opposite — a negation on the line makes it a warning for a human to glance at
+  ['prompt-injection', 'error', /^(?!.*\b(never|do\s+not|don'?t|must\s+not|should\s+not|not\s+without|without\s+asking)\b).*\b(without|w\/o)\s+(the\s+)?user'?s?\s+(knowledge|consent|confirmation|noticing)/i, 'tells the agent to act without the user'],
+  ['prompt-injection', 'warn', /\b(never|do\s+not|don'?t|must\s+not|should\s+not)\b.*\b(without|w\/o)\s+(the\s+)?user'?s?\s+(knowledge|consent|confirmation|noticing)/i, 'mentions acting without the user (negated — check the sentence)'],
   ['prompt-injection', 'error', /без\s+ведома\s+пользовател/i, 'tells the agent to act without the user (RU)'],
   ['prompt-injection', 'error', /не\s+(сообщай|говори|показывай|рассказывай|упоминай)\s+(об\s+этом\s+|это\s+)?пользовател/i, 'tells the agent to hide something from the user (RU)'],
   ['prompt-injection', 'error', /(скрыт(но|о)|тайно|незаметно)\s+(от|для)\s+пользовател/i, 'tells the agent to hide actions from the user (RU)'],
@@ -107,7 +116,23 @@ const BARE_HOST_IGNORE = /\.(mjs|js|cjs|ts|md|json|py|sh|ps1|txt|yml|yaml|toml|c
 
 export function loadAllowlist(path = ALLOWLIST_PATH) {
   const data = JSON.parse(readFileSync(path, 'utf8'));
-  return Object.keys(data.hosts || {}).map((h) => h.toLowerCase());
+  return [...Object.keys(data.hosts || {}), ...Object.keys(data.docs || {})].map((h) => h.toLowerCase());
+}
+
+export const ACCEPT_PATH = join(HERE, 'audit-accept.json');
+
+/** Reviewed findings that stay in the catalog on purpose: {skill, file (suffix), rule, reason}. They are reported as "accepted", never hidden. */
+export function loadAccepted(path = ACCEPT_PATH) {
+  return existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')).accepted || [] : [];
+}
+
+function applyAccepted(findings, accepted) {
+  for (const f of findings) {
+    if (f.severity !== 'error') continue;
+    const a = accepted.find((x) => x.skill === f.skill && x.rule === f.rule && (!x.file || f.file.endsWith(x.file)));
+    if (a) { f.severity = 'accepted'; f.reason = a.reason; }
+  }
+  return findings;
 }
 
 export const hostAllowed = (host, allow) => {
@@ -122,12 +147,30 @@ export function parseFrontMatter(text) {
   if (!m) return null;
   const out = {};
   let section = null;
-  for (const raw of m[1].split(/\r?\n/)) {
+  let block = null; // { key, section, lines, fold } while inside a `key: |` / `key: >` scalar
+  const closeBlock = () => {
+    const text = block.lines.join(block.fold ? ' ' : '\n').trim();
+    if (block.section) out[block.section][block.key] = text; else out[block.key] = text;
+    block = null;
+  };
+  const lines = m[1].split(/\r?\n/);
+  for (const [i, raw] of lines.entries()) {
+    if (block) {
+      if (!raw.trim() || /^\s+\S/.test(raw)) { block.lines.push(raw.trim()); continue; }
+      closeBlock();
+    }
     if (!raw.trim() || raw.trim().startsWith('#')) continue;
+    const scalar = raw.match(/^(\s*)([A-Za-z0-9_-]+):\s*([|>])[-+]?\s*$/);
+    if (scalar) {
+      block = { key: scalar[2], section: scalar[1] ? section : null, lines: [], fold: scalar[3] === '>' };
+      if (!scalar[1]) section = null;
+      continue;
+    }
     const nested = raw.match(/^\s+([A-Za-z0-9_-]+):\s*(.*)$/);
     const top = raw.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (top) {
       const [, key, value] = top;
+      if (value === '' && nextIsPlainText(lines, i)) { block = { key, section: null, lines: [], fold: true }; section = null; continue; }
       if (value === '') { section = key; out[key] = {}; }
       else { section = null; out[key] = unquote(value); }
     } else if (nested && section) {
@@ -136,10 +179,17 @@ export function parseFrontMatter(text) {
       (out[section].items ??= []).push(unquote(raw.replace(/^\s+-\s+/, '')));
     }
   }
+  if (block) closeBlock();
   return out;
 }
 
 const unquote = (v) => v.replace(/^(["'])(.*)\1$/, '$2').trim();
+
+/** `key:` followed by indented lines that are neither `sub: value` nor `- item` is a plain multi-line scalar. */
+function nextIsPlainText(lines, i) {
+  const next = lines.slice(i + 1).find((l) => l.trim());
+  return !!next && /^\s+\S/.test(next) && !/^\s+([A-Za-z0-9_-]+):(\s|$)/.test(next) && !/^\s+-\s/.test(next);
+}
 
 function* walk(dir) {
   for (const name of readdirSync(dir)) {
@@ -177,10 +227,13 @@ export function auditSkill(dir, { allow = loadAllowlist(), root = dirname(dir) }
 
   for (const f of walk(dir)) {
     if (f.symlink) { add('error', 'structure', f.path, 0, 'symbolic link inside a skill'); continue; }
-    const ext = basename(f.path).startsWith('.env') ? '.env.example' : extname(f.path).toLowerCase();
-    if (basename(f.path) === '.env' || /^\.env\.(?!example$)/.test(basename(f.path))) { add('error', 'structure', f.path, 0, 'an .env file inside a skill'); continue; }
-    if (!TEXT_EXT.has(ext)) { add('error', 'structure', f.path, 0, `unexpected file type "${ext || basename(f.path)}" — only text files (md, mjs, js, ts, sh, py, ps1, json, yml, toml, txt, csv)`); continue; }
+    const base = basename(f.path);
+    const ext = base.startsWith('.env') ? '.env.example' : LICENSE_FILE.test(base) || BARE_TEXT_FILE.test(base) ? '.txt' : extname(f.path).toLowerCase() || `.${base.toLowerCase()}`;
+    if (base === '.env' || /^\.env\.(?!example$)/.test(base)) { add('error', 'structure', f.path, 0, 'an .env file inside a skill'); continue; }
     if (f.size > MAX_FILE_BYTES) { add('error', 'structure', f.path, 0, `file larger than ${MAX_FILE_BYTES / 1024} KB`); continue; }
+    if (ASSET_EXT.has(ext)) continue;
+    if (!TEXT_EXT.has(ext)) { add('error', 'structure', f.path, 0, `unexpected file type "${ext}" — only text files and image/font/pdf assets`); continue; }
+    if (LICENSE_FILE.test(base)) continue;
     const text = readFileSync(f.path, 'utf8');
     if (text.includes('\u0000')) { add('error', 'structure', f.path, 0, 'binary content in a text file'); continue; }
     scanText(text, f.path, ext, add, allow);
@@ -190,7 +243,9 @@ export function auditSkill(dir, { allow = loadAllowlist(), root = dirname(dir) }
 
 function scanText(text, path, ext, add, allow) {
   const lines = text.split(/\r?\n/);
-  const isScript = ext !== '.md' && ext !== '.txt' && ext !== '.json' && ext !== '.csv';
+  const isScript = !['.md', '.mdx', '.txt', '.json', '.csv', '.html', '.css', '.svg', '.xml', '.xsd', '.ipynb', '.dot'].includes(ext);
+  // a link in prose cannot send anything anywhere; a host in code can — prose outside the allow-list warns, code errors
+  const hostSeverity = isScript ? 'error' : 'warn';
   let hosts = 0;
   let network = false;
   let fence = false;
@@ -200,18 +255,23 @@ function scanText(text, path, ext, add, allow) {
     for (const [rule, severity, re, message] of RULES) {
       // the "sudo" warning is noise in prose that tells the reader NOT to use it; keep it for code
       if (rule === 'destructive' && severity === 'warn' && ext === '.md' && !fence) continue;
-      if (re.test(line)) add(severity, rule, path, n, message, line);
+      // an XML namespace is not a request
+      if (rule === 'insecure-http' && /xmlns/.test(line)) continue;
+      if (!re.test(line)) continue;
+      // a security guide that *names* eval() is not obfuscated code: in prose files these are warnings, in code errors
+      const sev = rule === 'obfuscation' && !isScript && !/invisible/.test(message) ? 'warn' : severity;
+      add(sev, rule, path, n, message, line);
     }
     for (const m of line.matchAll(URL_HOST_RE)) {
       hosts++;
-      if (!hostAllowed(m[1], allow)) add('error', 'external-host', path, n, `host "${m[1]}" is not in tools/allowlist.json`, line);
+      if (!hostAllowed(m[1], allow)) add(hostSeverity, 'external-host', path, n, `host "${m[1]}" is not in tools/allowlist.json`, line);
     }
     for (const m of line.matchAll(BARE_HOST_RE)) {
       const host = m[1];
       if (BARE_HOST_IGNORE.test(host) || /^\d/.test(host)) continue;
       if (line.includes(`://${host}`) || line.includes(`@${host}`)) continue; // counted above / an e-mail
       hosts++;
-      if (!hostAllowed(host, allow)) add('error', 'external-host', path, n, `host "${host}" is not in tools/allowlist.json`, line);
+      if (!hostAllowed(host, allow)) add(hostSeverity, 'external-host', path, n, `host "${host}" is not in tools/allowlist.json`, line);
     }
     if (isScript && NETWORK_RE.test(line)) network = true;
   });
@@ -228,13 +288,21 @@ export function audit(paths, opts = {}) {
     if (existsSync(join(abs, 'SKILL.md'))) { skills.push({ dir: abs, root: dirname(abs) }); continue; }
     for (const name of readdirSync(abs)) {
       const d = join(abs, name);
-      if (statSync(d).isDirectory() && !name.startsWith('.')) skills.push({ dir: d, root: abs });
+      if (!statSync(d).isDirectory() || name.startsWith('.')) continue;
+      if (existsSync(join(d, 'SKILL.md'))) { skills.push({ dir: d, root: abs }); continue; }
+      // a category folder (skills/<model>/<skill>): one more level
+      for (const sub of readdirSync(d)) {
+        const sd = join(d, sub);
+        if (statSync(sd).isDirectory() && !sub.startsWith('.') && existsSync(join(sd, 'SKILL.md'))) skills.push({ dir: sd, root: abs });
+      }
     }
   }
-  const findings = skills.flatMap(({ dir, root }) => auditSkill(dir, { allow, root }));
+  const accepted = opts.accepted ?? loadAccepted();
+  const findings = applyAccepted(skills.flatMap(({ dir, root }) => auditSkill(dir, { allow, root })), accepted);
   const errors = findings.filter((f) => f.severity === 'error').length;
   const warnings = findings.filter((f) => f.severity === 'warn').length;
-  return { skills: skills.map((s) => basename(s.dir)), findings, errors, warnings, ok: errors === 0 && (!opts.strict || warnings === 0) };
+  const acceptedCount = findings.filter((f) => f.severity === 'accepted').length;
+  return { skills: skills.map((s) => basename(s.dir)), findings, errors, warnings, accepted: acceptedCount, ok: errors === 0 && (!opts.strict || warnings === 0) };
 }
 
 export function formatReport(r) {
@@ -244,9 +312,9 @@ export function formatReport(r) {
   for (const s of r.skills) {
     const list = by.get(s) ?? [];
     out.push(`${list.some((f) => f.severity === 'error') ? '✗' : list.length ? '△' : '✓'} ${s}${list.length ? '' : ' — clean'}`);
-    for (const f of list) out.push(`    ${f.severity === 'error' ? 'ERROR' : 'warn '} ${f.rule.padEnd(18)} ${f.file}${f.line ? `:${f.line}` : ''} — ${f.message}${f.snippet ? `\n          ${f.snippet}` : ''}`);
+    for (const f of list) out.push(`    ${{ error: 'ERROR', warn: 'warn ', accepted: 'ACCEPTED' }[f.severity]} ${f.rule.padEnd(18)} ${f.file}${f.line ? `:${f.line}` : ''} — ${f.message}${f.reason ? ` [accepted: ${f.reason}]` : ''}${f.snippet ? `\n          ${f.snippet}` : ''}`);
   }
-  out.push('', `${r.skills.length} skills, ${r.errors} errors, ${r.warnings} warnings — ${r.ok ? 'PASS' : 'FAIL'}`);
+  out.push('', `${r.skills.length} skills, ${r.errors} errors, ${r.warnings} warnings, ${r.accepted} accepted — ${r.ok ? 'PASS' : 'FAIL'}`);
   return out.join('\n');
 }
 

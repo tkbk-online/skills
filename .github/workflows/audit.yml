@@ -21,9 +21,5 @@ jobs:
         run: node --test "tools/*.test.mjs"
       - name: Audit skills (report goes to the job summary)
         run: node tools/audit.mjs skills --summary "$GITHUB_STEP_SUMMARY"
-      - name: Every skill folder is referenced in the README catalogs
-        run: |
-          for d in skills/*/; do
-            n=$(basename "$d")
-            grep -q "skills/$n/SKILL.md" README.md || { echo "README.md does not list $n"; exit 1; }
-          done
+      - name: README, catalog.json and index.html match the skill folders
+        run: node tools/build-catalog.mjs --check

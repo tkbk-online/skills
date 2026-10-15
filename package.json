@@ -7,7 +7,9 @@
   "scripts": {
     "audit": "node tools/audit.mjs",
     "audit:json": "node tools/audit.mjs --json",
-    "test": "node --test \"tools/*.test.mjs\" && node tools/audit.mjs"
+    "catalog": "node tools/build-catalog.mjs",
+    "import": "node tools/import.mjs",
+    "test": "node --test \"tools/*.test.mjs\" && node tools/audit.mjs && node tools/build-catalog.mjs --check"
   },
   "engines": {
     "node": ">=20"
