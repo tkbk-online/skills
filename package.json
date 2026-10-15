@@ -1,0 +1,36 @@
+{
+  "name": "@tkbk/skills",
+  "version": "0.1.0",
+  "description": "TKBK Skills Hub: audited SKILL.md skills for AI agents (Claude Code, Cursor, Codex, TKBK Agent) — Wildberries, Ozon, Yandex Market, Bitrix24, amoCRM, Avito, YooKassa, Russian legal docs.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "audit": "node tools/audit.mjs",
+    "audit:json": "node tools/audit.mjs --json",
+    "test": "node --test \"tools/*.test.mjs\" && node tools/audit.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkbk-online/skills.git"
+  },
+  "homepage": "https://tkbk.online/skills",
+  "keywords": [
+    "skills",
+    "agent-skills",
+    "claude-code",
+    "cursor",
+    "codex",
+    "wildberries",
+    "ozon",
+    "yandex-market",
+    "bitrix24",
+    "amocrm",
+    "avito",
+    "yookassa",
+    "sbp"
+  ]
+}
