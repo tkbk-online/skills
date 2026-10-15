@@ -104,16 +104,16 @@ npx skills add tkbk-online/skills --list
 
 ### GLM
 
-Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY).
+Официальные скилы Z.ai для моделей GLM. Скрипты в этой копии ходят через шлюз TKBK (TKBK_API_KEY, модель glm-5.3); base URL настраивается переменной TKBK_BASE_URL.
 
 | Скил | Что делает | Источник | Лицензия | Проверка |
 |---|---|---|---|---|
 | [glm-master-skill](skills/glm/glm-master-skill/SKILL.md) | Обзор официальных скилов GLM и способы установки (только документация). | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glm-master-skill) | Apache-2.0 | ✅ 2026-10-15 |
 | [glmocr-sdk](skills/glm/glmocr-sdk/SKILL.md) | OCR документов через GLM-OCR SDK: текст, таблицы, формулы. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmocr-sdk) | Apache-2.0 | ✅ 2026-10-15 |
-| [glmv-doc-based-writing](skills/glm/glmv-doc-based-writing/SKILL.md) | Написание текстов на основе загруженных документов с сохранением фактов и структуры. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-doc-based-writing) | Apache-2.0 | ✅ 2026-10-15 |
+| [glmv-doc-based-writing](skills/glm/glmv-doc-based-writing/SKILL.md) | Написание текстов на основе загруженных документов с сохранением фактов и структуры. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-doc-based-writing) · скрипты через шлюз TKBK | Apache-2.0 | ✅ 2026-10-15 |
 | [glmv-prd-to-app](skills/glm/glmv-prd-to-app/SKILL.md) | Полноценное веб-приложение из PRD и прототипов: схема БД, API, фронтенд, проверка по макетам, деплой-скрипт. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prd-to-app) | Apache-2.0 | ✅ 2026-10-15 · ⚠️ 1 |
-| [glmv-prompt-gen](skills/glm/glmv-prompt-gen/SKILL.md) | Генерация промптов для изображений и видео по описанию или референсу. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prompt-gen) | Apache-2.0 | ✅ 2026-10-15 |
-| [glmv-resume-screen](skills/glm/glmv-resume-screen/SKILL.md) | Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-resume-screen) | Apache-2.0 | ✅ 2026-10-15 |
+| [glmv-prompt-gen](skills/glm/glmv-prompt-gen/SKILL.md) | Генерация промптов для изображений и видео по описанию или референсу. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prompt-gen) · скрипты через шлюз TKBK | Apache-2.0 | ✅ 2026-10-15 |
+| [glmv-resume-screen](skills/glm/glmv-resume-screen/SKILL.md) | Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-resume-screen) · скрипты через шлюз TKBK | Apache-2.0 | ✅ 2026-10-15 |
 | [glmv-web-replication](skills/glm/glmv-web-replication/SKILL.md) | Воспроизведение веб-страницы по скриншоту: вёрстка и стили. | [zai-org/GLM-skills](https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-web-replication) | Apache-2.0 | ✅ 2026-10-15 · ⚠️ 6 |
 
 ### Grok

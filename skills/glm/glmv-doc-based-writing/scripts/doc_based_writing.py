@@ -26,8 +26,11 @@ try:
 except ImportError:
     HAS_PYMUPDF = False
 
-DEFAULT_MODEL = "glm-5v-turbo"
-API_BASE_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+# TKBK Skills Hub: requests go through the TKBK gateway (OpenAI-compatible) with the one TKBK key.
+# Override the endpoint with TKBK_BASE_URL (or OPENAI_BASE_URL) and the model with TKBK_MODEL / --model.
+DEFAULT_BASE_URL = "https://api.tkbk.online/openai/v1"
+API_BASE_URL = (os.environ.get("TKBK_BASE_URL") or os.environ.get("OPENAI_BASE_URL") or DEFAULT_BASE_URL).rstrip("/") + "/chat/completions"
+DEFAULT_MODEL = os.environ.get("TKBK_MODEL", "glm-5.3")
 
 # Model max_tokens limits (per official docs)
 MODEL_MAX_TOKENS = {
@@ -143,14 +146,15 @@ def screen(
         }
 
     if not api_key:
-        api_key = os.environ.get("ZHIPU_API_KEY")
+        api_key = os.environ.get("TKBK_API_KEY") or os.environ.get("OPENAI_API_KEY") or os.environ.get("ZHIPU_API_KEY")
 
     if not api_key:
         return {
             "success": False,
             "error": (
-                "ZHIPU_API_KEY not configured. "
-                "Get your API key at: https://bigmodel.cn/usercenter/proj-mgmt/apikeys. "
+                "TKBK_API_KEY not configured. "
+                "Get a TKBK key at https://tkbk.online/account and export TKBK_API_KEY (OPENAI_API_KEY also works; "
+                "ZHIPU_API_KEY together with TKBK_BASE_URL — for the Z.ai endpoint). "
                 "未配置 ZHIPU_API_KEY，请在上述链接获取并配置。"
             ),
         }
@@ -268,7 +272,7 @@ def screen(
             "success": False,
             "error": (
                 f"API authentication failed: {error_msg}. "
-                "Please check your ZHIPU_API_KEY at: https://bigmodel.cn/usercenter/proj-mgmt/apikeys. "
+                "Please check TKBK_API_KEY (https://tkbk.online/account) or the key of the endpoint set in TKBK_BASE_URL. "
                 "认证失败，请检查或更新你的 ZHIPU_API_KEY。"
             ),
             "status_code": response.status_code,
@@ -324,7 +328,7 @@ def main():
         help="Writing requirements (e.g., 'Draft a professional article')",
     )
     parser.add_argument(
-        "--model", "-m", default=DEFAULT_MODEL, help="Model name (default: glm-4.6v)"
+        "--model", "-m", default=DEFAULT_MODEL, help=f"Model name (default: {DEFAULT_MODEL})"
     )
     parser.add_argument(
         "--system-prompt",

@@ -19,6 +19,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill amocrm-followup",
           "audit": {
             "errors": 0,
@@ -38,6 +39,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill avito-replies",
           "audit": {
             "errors": 0,
@@ -57,6 +59,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill bitrix24-leads",
           "audit": {
             "errors": 0,
@@ -76,6 +79,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill ozon-questions",
           "audit": {
             "errors": 0,
@@ -95,6 +99,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill ru-legal-docs",
           "audit": {
             "errors": 0,
@@ -114,6 +119,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill tkbk-setup",
           "audit": {
             "errors": 0,
@@ -133,6 +139,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill tz-from-chat",
           "audit": {
             "errors": 0,
@@ -152,6 +159,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill wb-reviews",
           "audit": {
             "errors": 0,
@@ -171,6 +179,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill yandex-market-stock",
           "audit": {
             "errors": 0,
@@ -190,6 +199,7 @@
           "upstream": "tkbk-online/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill yookassa-sbp",
           "audit": {
             "errors": 0,
@@ -217,6 +227,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill frontend-design",
           "audit": {
             "errors": 0,
@@ -236,6 +247,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill internal-comms",
           "audit": {
             "errors": 0,
@@ -255,6 +267,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill mcp-builder",
           "audit": {
             "errors": 0,
@@ -274,6 +287,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill skill-creator",
           "audit": {
             "errors": 0,
@@ -293,6 +307,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill theme-factory",
           "audit": {
             "errors": 0,
@@ -312,6 +327,7 @@
           "upstream": "anthropics/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill webapp-testing",
           "audit": {
             "errors": 0,
@@ -394,6 +410,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill cli-creator",
           "audit": {
             "errors": 0,
@@ -413,6 +430,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill define-goal",
           "audit": {
             "errors": 0,
@@ -432,6 +450,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill gh-address-comments",
           "audit": {
             "errors": 0,
@@ -451,6 +470,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill gh-fix-ci",
           "audit": {
             "errors": 0,
@@ -470,6 +490,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill jupyter-notebook",
           "audit": {
             "errors": 0,
@@ -489,6 +510,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill linear",
           "audit": {
             "errors": 0,
@@ -508,6 +530,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill migrate-to-codex",
           "audit": {
             "errors": 0,
@@ -527,6 +550,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill openai-docs",
           "audit": {
             "errors": 0,
@@ -546,6 +570,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill playwright",
           "audit": {
             "errors": 0,
@@ -565,6 +590,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill security-best-practices",
           "audit": {
             "errors": 0,
@@ -584,6 +610,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill security-ownership-map",
           "audit": {
             "errors": 0,
@@ -603,6 +630,7 @@
           "upstream": "openai/skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill security-threat-model",
           "audit": {
             "errors": 0,
@@ -622,6 +650,7 @@
           "upstream": "openai/skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill vercel-deploy",
           "audit": {
             "errors": 0,
@@ -649,6 +678,7 @@
           "upstream": "deepseek-ai/deepseek-harness",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill dsh-error-handling",
           "audit": {
             "errors": 0,
@@ -668,6 +698,7 @@
           "upstream": "deepseek-ai/deepseek-harness",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill dsh-find-simplifications",
           "audit": {
             "errors": 0,
@@ -687,6 +718,7 @@
           "upstream": "deepseek-ai/deepseek-harness",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill dsh-trim-cot-leakage",
           "audit": {
             "errors": 0,
@@ -706,6 +738,7 @@
           "upstream": "deepseek-ai/deepseek-harness",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill record-browser-gif",
           "audit": {
             "errors": 0,
@@ -731,7 +764,7 @@
       "id": "glm",
       "title": "GLM",
       "title_en": "GLM",
-      "text": "Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY).",
+      "text": "Официальные скилы Z.ai для моделей GLM. Скрипты в этой копии ходят через шлюз TKBK (TKBK_API_KEY, модель glm-5.3); base URL настраивается переменной TKBK_BASE_URL.",
       "skills": [
         {
           "name": "glm-master-skill",
@@ -744,6 +777,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill glm-master-skill",
           "audit": {
             "errors": 0,
@@ -763,6 +797,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill glmocr-sdk",
           "audit": {
             "errors": 0,
@@ -782,6 +817,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "scripts: base URL, key and default model go through the TKBK gateway (TKBK_BASE_URL / TKBK_API_KEY / TKBK_MODEL); the skill text is upstream",
           "install": "npx skills add tkbk-online/skills --skill glmv-doc-based-writing",
           "audit": {
             "errors": 0,
@@ -801,6 +837,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill glmv-prd-to-app",
           "audit": {
             "errors": 0,
@@ -820,6 +857,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "scripts: base URL, key and default model go through the TKBK gateway (TKBK_BASE_URL / TKBK_API_KEY / TKBK_MODEL); the skill text is upstream",
           "install": "npx skills add tkbk-online/skills --skill glmv-prompt-gen",
           "audit": {
             "errors": 0,
@@ -839,6 +877,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "scripts: base URL, key and default model go through the TKBK gateway (TKBK_BASE_URL / TKBK_API_KEY / TKBK_MODEL); the skill text is upstream",
           "install": "npx skills add tkbk-online/skills --skill glmv-resume-screen",
           "audit": {
             "errors": 0,
@@ -858,6 +897,7 @@
           "upstream": "zai-org/GLM-skills",
           "license": "Apache-2.0",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill glmv-web-replication",
           "audit": {
             "errors": 0,
@@ -904,6 +944,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill api-and-interface-design",
           "audit": {
             "errors": 0,
@@ -923,6 +964,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill brainstorming",
           "audit": {
             "errors": 0,
@@ -942,6 +984,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill code-review-and-quality",
           "audit": {
             "errors": 0,
@@ -961,6 +1004,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill debugging-and-error-recovery",
           "audit": {
             "errors": 0,
@@ -980,6 +1024,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill documentation-and-adrs",
           "audit": {
             "errors": 0,
@@ -999,6 +1044,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill executing-plans",
           "audit": {
             "errors": 0,
@@ -1018,6 +1064,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill performance-optimization",
           "audit": {
             "errors": 0,
@@ -1037,6 +1084,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill planning-and-task-breakdown",
           "audit": {
             "errors": 0,
@@ -1056,6 +1104,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill requesting-code-review",
           "audit": {
             "errors": 0,
@@ -1075,6 +1124,7 @@
           "upstream": "addyosmani/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill security-and-hardening",
           "audit": {
             "errors": 0,
@@ -1094,6 +1144,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill systematic-debugging",
           "audit": {
             "errors": 0,
@@ -1113,6 +1164,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill test-driven-development",
           "audit": {
             "errors": 0,
@@ -1132,6 +1184,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill using-git-worktrees",
           "audit": {
             "errors": 0,
@@ -1151,6 +1204,7 @@
           "upstream": "vercel-labs/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill vercel-composition-patterns",
           "audit": {
             "errors": 0,
@@ -1170,6 +1224,7 @@
           "upstream": "vercel-labs/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill vercel-react-best-practices",
           "audit": {
             "errors": 0,
@@ -1189,6 +1244,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill verification-before-completion",
           "audit": {
             "errors": 0,
@@ -1208,6 +1264,7 @@
           "upstream": "vercel-labs/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill web-design-guidelines",
           "audit": {
             "errors": 0,
@@ -1227,6 +1284,7 @@
           "upstream": "vercel-labs/agent-skills",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill writing-guidelines",
           "audit": {
             "errors": 0,
@@ -1246,6 +1304,7 @@
           "upstream": "obra/superpowers",
           "license": "MIT",
           "checked": "2026-10-15",
+          "modified": "",
           "install": "npx skills add tkbk-online/skills --skill writing-plans",
           "audit": {
             "errors": 0,

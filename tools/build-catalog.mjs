@@ -48,6 +48,7 @@ export function collect() {
           upstream: own ? REPO : t.upstream,
           license: own ? 'MIT' : t.license,
           checked: own ? fm.metadata?.verified || '' : t.imported || '',
+          modified: t.modified || '',
           install: `npx skills add ${REPO} --skill ${name}`,
           audit: { errors, warnings, accepted, status: errors ? 'fail' : 'pass' },
         });
@@ -77,7 +78,7 @@ export function collect() {
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const cell = (s = '') => String(s).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
 const auditLabel = (s) => (s.bridge ? 'ссылка, не копируется' : `${s.audit.status === 'pass' ? '✅' : '❌'} ${s.checked}${s.audit.warnings ? ` · ⚠️ ${s.audit.warnings}` : ''}${s.audit.accepted ? ` · принято ${s.audit.accepted}` : ''}`);
-const srcLabel = (s) => (s.upstream === REPO ? 'TKBK' : `[${s.upstream}](${s.source})`);
+const srcLabel = (s) => (s.upstream === REPO ? 'TKBK' : `[${s.upstream}](${s.source})${s.modified ? ' · скрипты через шлюз TKBK' : ''}`);
 
 export function renderReadme(c) {
   const out = [];
@@ -106,7 +107,7 @@ export function renderHtml(c) {
     <article class="card" data-name="${esc(s.name)}" data-text="${esc(`${s.name} ${s.description_ru} ${s.description || ''} ${s.upstream}`.toLowerCase())}">
       <div class="top"><code class="name">${esc(s.name)}</code>${s.bridge ? '<span class="badge link">ссылка</span>' : `<span class="badge ${s.audit.status}">${s.audit.status === 'pass' ? '✓ проверен' : '✗ ошибки'}${s.audit.warnings ? ` · ⚠ ${s.audit.warnings}` : ''}</span>`}</div>
       <p class="desc">${esc(s.description_ru)}</p>
-      <p class="meta">${esc(s.upstream === REPO ? 'TKBK' : s.upstream)} · ${esc(s.license)}${s.checked ? ` · ${esc(s.checked)}` : ''}</p>
+      <p class="meta">${esc(s.upstream === REPO ? 'TKBK' : s.upstream)} · ${esc(s.license)}${s.checked ? ` · ${esc(s.checked)}` : ''}${s.modified ? ' · скрипты через шлюз TKBK' : ''}</p>
       ${s.install ? `<div class="cmd"><code>${esc(s.install)}</code><button type="button" data-copy="${esc(s.install)}">копировать</button></div>` : ''}
       <p class="links"><a href="${esc(s.url)}" target="_blank" rel="noreferrer noopener">${s.bridge ? 'репозиторий источника' : 'SKILL.md на GitHub'} ↗</a>${!s.bridge && s.upstream !== REPO ? ` · <a href="${esc(s.source)}" target="_blank" rel="noreferrer noopener">источник ↗</a>` : ''}</p>
     </article>`).join('')}

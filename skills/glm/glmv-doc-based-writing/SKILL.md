@@ -7,8 +7,8 @@ metadata:
   openclaw:
     requires:
       env:
-        - ZHIPU_API_KEY
-    primaryEnv: ZHIPU_API_KEY
+        - TKBK_API_KEY
+    primaryEnv: TKBK_API_KEY
     emoji: "✍️"
     homepage: https://github.com/zai-org/GLM-V/tree/main/skills/glmv-doc-based-writing
 tkbk:
@@ -17,9 +17,17 @@ tkbk:
   license: "Apache-2.0"
   imported: "2026-10-15"
   description_ru: "Написание текстов на основе загруженных документов с сохранением фактов и структуры."
+  modified: "scripts: base URL, key and default model go through the TKBK gateway (TKBK_BASE_URL / TKBK_API_KEY / TKBK_MODEL); the skill text is upstream"
 ---
 
 # GLM-V Document-Based Writing Skill
+
+> **Через шлюз TKBK / via the TKBK gateway.** В этой копии скрипт ходит в `https://api.tkbk.online/openai/v1` с ключом
+> `TKBK_API_KEY` (подойдёт и `OPENAI_API_KEY`), модель по умолчанию `glm-5.3` (`TKBK_MODEL` или `--model`). Один ключ TKBK —
+> отдельный ключ Z.ai не нужен. Инструкции про `ZHIPU_API_KEY` ниже относятся к исходному варианту: они работают, если задать
+> `TKBK_BASE_URL=https://open.bigmodel.cn/api/paas/v4`. Ключ TKBK: https://tkbk.online/account
+> This copy calls the TKBK gateway (`TKBK_API_KEY`, default model `glm-5.3`); set `TKBK_BASE_URL` to use the original Z.ai endpoint.
+
 
 Comprehend the given document(s) and write a textual content (paper/article/essay/report/review/post/brief/proposal/plan) according to your requirements using the ZhiPu GLM-V multimodal model.
 

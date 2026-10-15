@@ -347,7 +347,7 @@ footer{padding:28px 0 48px;color:var(--dim);font-size:13px;border-top:1px solid 
 
 <section id="glm">
   <h2>GLM <span class="count">7</span></h2>
-  <p class="cat-text">Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY).</p>
+  <p class="cat-text">Официальные скилы Z.ai для моделей GLM. Скрипты в этой копии ходят через шлюз TKBK (TKBK_API_KEY, модель glm-5.3); base URL настраивается переменной TKBK_BASE_URL.</p>
   <div class="grid">
     <article class="card" data-name="glm-master-skill" data-text="glm-master-skill обзор официальных скилов glm и способы установки (только документация). documentation-only master skill for glm ecosystem discovery and installation.
 this skill does not execute scripts or subprocess commands.
@@ -372,7 +372,7 @@ not for: real-time camera feeds, audio transcription, or non-document images (ph
     <article class="card" data-name="glmv-doc-based-writing" data-text="glmv-doc-based-writing написание текстов на основе загруженных документов с сохранением фактов и структуры. write a textual content based on given document(s) and requirements, using zhipu glm-v multimodal model. read and comprehend one or multiple documents (pdf/docx), write a content in markdown format according to the specified requirements. use when the user wants to draft a paper/article/essay/report/review/post/brief/proposal/plan, etc. zai-org/glm-skills">
       <div class="top"><code class="name">glmv-doc-based-writing</code><span class="badge pass">✓ проверен</span></div>
       <p class="desc">Написание текстов на основе загруженных документов с сохранением фактов и структуры.</p>
-      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15 · скрипты через шлюз TKBK</p>
       <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-doc-based-writing</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-doc-based-writing">копировать</button></div>
       <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-doc-based-writing" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-doc-based-writing" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
     </article>
@@ -386,14 +386,14 @@ not for: real-time camera feeds, audio transcription, or non-document images (ph
     <article class="card" data-name="glmv-prompt-gen" data-text="glmv-prompt-gen генерация промптов для изображений и видео по описанию или референсу. analyze images/videos and generate professional prompts for text-to-image and text-to-video ai tools (midjourney, stable diffusion, dall-e, sora, runway, kling, pika). use when the user wants to generate prompts from reference images/videos, create ai art prompts, or get prompt engineering suggestions from visual content. zai-org/glm-skills">
       <div class="top"><code class="name">glmv-prompt-gen</code><span class="badge pass">✓ проверен</span></div>
       <p class="desc">Генерация промптов для изображений и видео по описанию или референсу.</p>
-      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15 · скрипты через шлюз TKBK</p>
       <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-prompt-gen</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-prompt-gen">копировать</button></div>
       <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-prompt-gen" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-prompt-gen" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
     </article>
     <article class="card" data-name="glmv-resume-screen" data-text="glmv-resume-screen скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт. screen and evaluate resumes against criteria using zhipu glm-v multimodal model. reads multiple resume files (pdf/docx/txt), compares against user-defined screening criteria, and outputs a markdown table with pass/fail analysis. use when the user wants to filter resumes, compare candidates, or batch-evaluate job applications. zai-org/glm-skills">
       <div class="top"><code class="name">glmv-resume-screen</code><span class="badge pass">✓ проверен</span></div>
       <p class="desc">Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт.</p>
-      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15</p>
+      <p class="meta">zai-org/GLM-skills · Apache-2.0 · 2026-10-15 · скрипты через шлюз TKBK</p>
       <div class="cmd"><code>npx skills add tkbk-online/skills --skill glmv-resume-screen</code><button type="button" data-copy="npx skills add tkbk-online/skills --skill glmv-resume-screen">копировать</button></div>
       <p class="links"><a href="https://github.com/tkbk-online/skills/tree/main/skills/glm/glmv-resume-screen" target="_blank" rel="noreferrer noopener">SKILL.md на GitHub ↗</a> · <a href="https://github.com/zai-org/GLM-skills/tree/2ecd31c37e75/skills/glmv-resume-screen" target="_blank" rel="noreferrer noopener">источник ↗</a></p>
     </article>

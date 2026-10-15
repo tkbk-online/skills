@@ -49,6 +49,11 @@ for (const s of MANIFEST.skills) {
   if (only && only !== name && only !== basename(s.path)) continue;
   const sha = execFileSync('git', ['-C', cloneDir, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
   const target = join(ROOT, 'skills', s.category, name);
+  // a skill whose scripts were adapted (tkbk.modified in the front matter) is not overwritten by a re-import unless forced
+  if (existsSync(join(target, 'SKILL.md')) && !args.includes('--force')) {
+    const current = parseFrontMatter(readFileSync(join(target, 'SKILL.md'), 'utf8'));
+    if (current?.tkbk?.modified) { console.log(`• ${s.category}/${name}: locally modified (${current.tkbk.modified}) — kept; use --force to re-import`); continue; }
+  }
   rmSync(target, { recursive: true, force: true });
   mkdirSync(dirname(target), { recursive: true });
   cpSync(skillSrc, target, { recursive: true, filter: (p) => !JUNK.test(basename(p)) });

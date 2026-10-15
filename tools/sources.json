@@ -67,7 +67,7 @@
     "glm": {
       "title": "GLM",
       "title_en": "GLM",
-      "text": "Официальные скилы Z.ai для моделей GLM; скрипты зовут API Z.ai напрямую (ключ ZHIPUAI_API_KEY)."
+      "text": "Официальные скилы Z.ai для моделей GLM. Скрипты в этой копии ходят через шлюз TKBK (TKBK_API_KEY, модель glm-5.3); base URL настраивается переменной TKBK_BASE_URL."
     },
     "grok": {
       "title": "Grok",
@@ -309,14 +309,16 @@
       "path": "skills/glmv-prompt-gen",
       "category": "glm",
       "license": "Apache-2.0",
-      "ru": "Генерация промптов для изображений и видео по описанию или референсу."
+      "ru": "Генерация промптов для изображений и видео по описанию или референсу.",
+      "modified": "scripts → TKBK gateway"
     },
     {
       "source": "zai-org/GLM-skills",
       "path": "skills/glmv-resume-screen",
       "category": "glm",
       "license": "Apache-2.0",
-      "ru": "Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт."
+      "ru": "Скрининг резюме под вакансию: извлечение данных, оценка соответствия, отчёт.",
+      "modified": "scripts → TKBK gateway"
     },
     {
       "source": "zai-org/GLM-skills",
@@ -337,7 +339,8 @@
       "path": "skills/glmv-doc-based-writing",
       "category": "glm",
       "license": "Apache-2.0",
-      "ru": "Написание текстов на основе загруженных документов с сохранением фактов и структуры."
+      "ru": "Написание текстов на основе загруженных документов с сохранением фактов и структуры.",
+      "modified": "scripts → TKBK gateway"
     },
     {
       "source": "xai-org/grok-build-plugin-cc",
