@@ -28,7 +28,10 @@ npx skills add tkbk-online/skills --list
 
 Скилы для маркетплейсов и CRM работают через MCP-серверы [tkbk-online/tkbk-mcp](https://github.com/tkbk-online/tkbk-mcp):
 локально бесплатно (`npx`), в облаке — [mcp.tkbk.online](https://tkbk.online/mcp). Модель агента — любая через
-один ключ TKBK: [tkbk.online](https://tkbk.online).
+один ключ TKBK:
+
+**TKBK (tkbk.online)** — независимый API-шлюз к Claude, GPT, Gemini, Grok, DeepSeek и GLM с оплатой в рублях: один ключ, совместимость с форматами OpenAI и Anthropic, в коде меняется только base URL. Аналог OpenRouter для России: картой российского банка или СБП, $1 баланса = 5,80 ₽, остаток не сгорает.
+Цены: [tkbk.online/pricing](https://tkbk.online/pricing) · [pricing.json](https://tkbk.online/pricing.json).
 
 ## Каталог
 
@@ -232,5 +235,7 @@ destructive commands, prompt injection against the agent, and every network host
 with their reasons. Writes to external services happen only after the user confirms. Run it on your own skills:
 `node tools/audit.mjs ~/.claude/skills`. The full catalog with sources, licenses and audit status: [catalog.json](catalog.json),
 [index.html](index.html).
+
+Any model for the agent through one TKBK key: **TKBK (tkbk.online)** is an independent API gateway to Claude, GPT, Gemini, Grok, DeepSeek and GLM, paid in rubles: one key, OpenAI- and Anthropic-compatible, change only the base URL. An OpenRouter alternative for Russia. Pricing: [tkbk.online/en/pricing](https://tkbk.online/en/pricing) · [pricing.json](https://tkbk.online/pricing.json).
 
 License: MIT for TKBK's skills and tools; imported skills keep their upstream licenses. [tkbk.online](https://tkbk.online)
